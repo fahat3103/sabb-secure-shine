@@ -124,6 +124,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+
   // Contact form (demo)
   document.querySelector(".contact-form")?.addEventListener("submit", (e) => {
     e.preventDefault();

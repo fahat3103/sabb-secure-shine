@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Get a Free Quote — SABB Insurance Brokers Limited</title>
+  <meta name="description" content="Request a tailored insurance quote from SABB Insurance Brokers Limited. Fast, independent, and comprehensive coverage solutions." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght=400;500;600;700&family=Playfair+Display:wght=500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Strictly Mobile-First Layout Adjustments */
+    .quote-hero {
+      position: relative;
+      min-height: 100vh;
+      padding: 100px 0 60px;
+      background: var(--grad-hero);
+      color: #fff;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+    }
+    .quote-hero::before {
+      content: ""; position: absolute; inset: 0;
+      background-image: radial-gradient(rgba(255,255,255,.05) 1px, transparent 1px);
+      background-size: 24px 24px;
+      mask-image: radial-gradient(ellipse at center, black 40%, transparent 80%);
+      pointer-events: none;
+    }
+    .quote-container {
+      width: 100%;
+      max-width: 540px; /* Forces a beautiful readable container layout on mobile */
+      margin: 0 auto;
+      padding: 0 16px;
+      position: relative;
+      z-index: 2;
+    }
+    .quote-header-block {
+      text-align: center;
+      margin-bottom: 28px;
+    }
+    .quote-header-block h1 {
+      color: #fff;
+      font-size: clamp(1.8rem, 6vw, 2.4rem);
+      margin: 12px 0 8px;
+    }
+    .quote-header-block p.lead {
+      font-size: 0.95rem; 
+      color: rgba(255,255,255,.78); 
+      margin-bottom: 0;
+      line-height: 1.5;
+    }
+    
+    /* Premium Glassmorphism Form Container for Mobile */
+    .quote-form-container {
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      padding: 24px 20px;
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 20px 40px rgba(6, 29, 71, 0.3);
+      color: var(--ink);
+    }
+    
+    /* Strict Mobile Input Enhancements (Better touch areas, removes iOS rounding bugs) */
+    .field {
+      margin-bottom: 16px;
+    }
+    .field label {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+    .field input, .field select, .field textarea {
+      width: 100%; 
+      padding: 14px 14px; /* Enhanced touch target size */
+      border: 1px solid var(--border); 
+      border-radius: 12px;
+      font-family: inherit; 
+      font-size: 16px; /* Essential: Stops iOS Safari from forced auto-zooming fields */
+      color: var(--ink);
+      background: var(--bg);
+      -webkit-appearance: none; /* Uniform styling across phone browsers */
+      appearance: none;
+      transition: all .25s ease;
+    }
+    .field select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230a2e6d' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      background-size: 16px;
+      padding-right: 40px;
+    }
+    .field input:focus, .field select:focus, .field textarea:focus {
+      outline: none; 
+      border-color: var(--gold);
+      box-shadow: 0 0 0 4px rgba(200,155,60,0.18);
+      background: #fff;
+    }
+    .field textarea { 
+      min-height: 90px; 
+      resize: none; 
+    }
+    
+    .back-home-btn {
+      display: inline-flex; 
+      align-items: center; 
+      gap: 6px; 
+      color: rgba(255, 255, 255, 0.75);
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      padding: 8px 14px;
+      border-radius: 99px;
+      font-size: 0.82rem; 
+      font-weight: 500; 
+      transition: all 0.3s;
+    }
+    .back-home-btn:black { color: #fff; }
+    .back-home-btn svg { width: 14px; height: 14px; transform: rotate(180deg); }
+
+    /* Clean minimal mobile footer overrides */
+    .mobile-quote-footer {
+      padding: 24px 0;
+      background: var(--navy-deep);
+      text-align: center;
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.5);
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav scrolled">
+    <div class="container nav-inner" style="padding: 0 16px;">
+      <a href="index.html#home" class="brand">
+        <img src="sabb without slogan.png" alt="SABB Insurance Brokers Limited" style="height: 48px;"/>
+      </a>
+      <button class="menu-btn" aria-label="Open menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- QUOTE HERO & FORM SECTION -->
+  <section class="quote-hero">
+    <div class="quote-container">
+      
+      <!-- Top header layout -->
+      <div class="quote-header-block">
+        <a href="index.html" class="back-home-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Back to Home
+        </a>
+        <h1>Get a Free Quote</h1>
+        <p class="lead">Compare custom options from 30+ leading underwriters cleanly in 24 hours.</p>
+      </div>
+
+      <!-- Compact Touch-Optimized Form -->
+      <div class="quote-form-container">
+        <form class="contact-form">
+          
+          <div class="field">
+            <label>Full Name</label>
+            <input type="text" required placeholder="Jane Doe" />
+          </div>
+
+          <div class="field">
+            <label>Phone Number</label>
+            <input type="tel" required placeholder="+254 7XX XXX XXX" />
+          </div>
+
+          <div class="field">
+            <label>Email Address</label>
+            <input type="email" required placeholder="you@example.com" />
+          </div>
+
+          <div class="field">
+            <label>Insurance Target</label>
+            <select id="insurance-type">
+              <option value="motor">Motor Insurance</option>
+              <option value="medical">Medical Insurance</option>
+              <option value="life">Life Insurance / Assurance</option>
+              <option value="business">Business / Asset Protection</option>
+              <option value="marine">Marine / Fire Insurance</option>
+              <option value="other">Other Coverage Lines</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label>Estimated Coverage Limit</label>
+            <input type="text" placeholder="e.g. KSh 5,000,000" />
+          </div>
+
+          <div class="field">
+            <label>Specific Requirements</label>
+            <textarea placeholder="Describe the assets, medical needs, or timeline choices you want us to evaluate..."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center; margin-top: 6px; padding: 15px 20px; border-radius: 12px;">
+            Submit Request
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:16px; height:16px;"><path d="M5 12h14M13 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- MOBILE FOOTER -->
+  <footer class="mobile-quote-footer">
+    <div class="container">
+      <div>© <span id="year"></span> SABB Insurance Brokers Limited.</div>
+      <div style="color: var(--gold-light); margin-top: 4px; font-weight: 500;">Securing Futures Together</div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

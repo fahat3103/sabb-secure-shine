@@ -32,6 +32,62 @@
   --font-display: "Playfair Display", "Georgia", serif;
 }
 
+/* Desktop Navbar Quote Button */
+.nav-quote-btn {
+    background: #D4AF37;
+    color: #0A2E6D;
+    padding: 10px 18px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.nav-quote-btn:hover {
+    background: #E0B84B;
+    transform: translateY(-2px);
+}
+
+/* Mobile Floating Quote Button */
+.mobile-quote-btn {
+    display: none;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+    .nav-quote-btn {
+        display: none;
+    }
+
+    .mobile-quote-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        z-index: 9999;
+
+        background: #D4AF37;
+        color: #0A2E6D;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 13px;
+
+        padding: 10px 16px;
+        border-radius: 30px;
+
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        transition: 0.3s ease;
+    }
+
+    .mobile-quote-btn:hover {
+        background: #E0B84B;
+    }
+}
+
 /* ----- Reset ----- */
 *, *::before, *::after { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
@@ -113,7 +169,7 @@ p { margin: 0 0 1rem; color: var(--muted); }
 }
 .nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
 .brand { display: flex; align-items: center; gap: 12px; }
-.brand img { height: 46px; width: auto; }
+.brand img { height: 60px; width: auto; }
 .brand-text { display: none; }
 .nav-links { display: flex; gap: 28px; align-items: center; }
 .nav-links a {
