@@ -624,30 +624,45 @@ section { position: relative; padding: 110px 0; }
   border-radius: 16px;
   overflow: hidden;
   border: 1px solid var(--border);
-  background: linear-gradient(135deg, #eef2f8, #dee6f0);
+  background: #112233; /* Safe backdrop shade structure value anchor color parameter */
   position: relative;
-  display: grid; place-items: center;
-  color: var(--navy);
 }
-.map-box::before {
-  content: ""; position: absolute; inset: 0;
-  background-image:
-    linear-gradient(rgba(10,46,109,.08) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(10,46,109,.08) 1px, transparent 1px);
-  background-size: 30px 30px;
-}
-.map-pin {
-  position: relative; z-index: 1;
-  width: 50px; height: 50px; border-radius: 50% 50% 50% 0;
-  background: var(--grad-gold);
-  transform: rotate(-45deg);
-  display: grid; place-items: center;
-  box-shadow: 0 12px 24px rgba(10,46,109,.25);
-  animation: pin 2s ease-in-out infinite;
-}
-.map-pin::after { content: ""; width: 16px; height: 16px; border-radius: 50%; background: #fff; }
-@keyframes pin { 0%,100% { transform: rotate(-45deg) translateY(0); } 50% { transform: rotate(-45deg) translateY(-6px); } }
 
+/* Ensure the iframe tracking component fills out the dimensional architecture limits flawlessly */
+.map-box iframe {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Premium Floating Minimal Office Location Badge Panel styling layout overlay configuration rule properties */
+.office-suite-badge {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  z-index: 5;
+  background: rgba(6, 28, 35, 0.9);
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  pointer-events: none; /* Stops the badge layer element cursor area blocking click tracking control behaviors */
+}
+/* Center-aligns your custom animation pin perfectly over the live map frame window */
+.map-pin-overlay {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  pointer-events: none; /* Allows users to still drag the map behind it */
+  z-index: 4;
+}
 /* ----- Footer ----- */
 footer {
   background: var(--navy-deep);
@@ -740,4 +755,14 @@ footer::before {
   .shield { width: 280px; height: 340px; }
   .shield svg { width: 100px; height: 100px; }
   .fc-2 { right: 0; }
+}
+
+#admin-padlock-link:hover .padlock-icon {
+  background: rgba(255, 215, 0, 0.25) !important;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.5) !important;
+  transform: scale(1.1);
+}
+
+#admin-padlock-link:active .padlock-icon {
+  transform: scale(0.95);
 }

@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SABB Executive — Premium Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Google Fonts for Luxury Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  
+  <style>
+    /* Ultra-Premium Kinetic Luxury Palette & Hyper-Reflective Glass */
+    :root {
+      --vault-bg: #030a0e; /* Deepest oceanic obsidian black */
+      --glass-bg: rgba(6, 28, 35, 0.45); /* Highly refracted dark emerald crystal */
+      --glass-border: rgba(212, 175, 55, 0.2); /* Thin spun gold border line */
+      --gold-bright: #e5c158;
+      --neon-teal: rgba(0, 242, 254, 0.08);
+      --amber-glow: rgba(212, 175, 55, 0.12);
+    }
+
+    body {
+      background: var(--vault-bg); 
+      color: #f3f4f6;
+      padding: 40px 16px;
+      font-family: 'Inter', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Cinematic Light Leaks Behind the Interface for 3D Refraction Depth */
+    body::before {
+      content: '';
+      position: fixed;
+      top: -20%;
+      left: 10%;
+      width: 800px;
+      height: 800px;
+      background: radial-gradient(circle, var(--amber-glow) 0%, rgba(3,10,14,0) 70%);
+      z-index: -1;
+      pointer-events: none;
+    }
+    body::after {
+      content: '';
+      position: fixed;
+      bottom: -15%;
+      right: -5%;
+      width: 700px;
+      height: 700px;
+      background: radial-gradient(circle, var(--neon-teal) 0%, rgba(3,10,14,0) 70%);
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    .admin-container {
+      max-width: 850px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Masterpiece Emerald Glassmorphic Master Card */
+    .admin-card {
+      background: var(--glass-bg);
+      backdrop-filter: blur(40px) saturate(220%);
+      -webkit-backdrop-filter: blur(40px) saturate(220%);
+      border: 1px solid var(--glass-border);
+      border-radius: 28px;
+      padding: 32px 24px;
+      margin-top: 32px;
+      box-shadow: 
+        0 40px 100px rgba(0, 0, 0, 0.8),
+        inset 0 1px 2px rgba(255, 255, 255, 0.15),
+        0 0 40px rgba(0, 242, 254, 0.02);
+    }
+    
+    /* Rows Floating Intelligently */
+    .mail-item {
+      display: grid;
+      grid-template-columns: 50px 1fr 50px;
+      align-items: center;
+      gap: 24px;
+      padding: 28px 20px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      border-radius: 16px;
+      margin-bottom: 12px;
+      background: rgba(255, 255, 255, 0.01);
+    }
+    .mail-item:last-child { 
+      border-bottom: none; 
+      margin-bottom: 0;
+    }
+    
+    /* Hover state shifts into high-end reflective sheen */
+    .mail-item:hover {
+      background: rgba(255, 255, 255, 0.03);
+      border-bottom-color: rgba(212, 175, 55, 0.4);
+      transform: translateY(-4px) scale(1.01);
+      box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.4),
+        inset 0 1px 1px rgba(255, 255, 255, 0.1);
+    }
+
+    .mail-item.processed {
+      opacity: 0.3;
+      filter: grayscale(60%) blur(0.5px);
+    }
+
+    /* Sleek Bespoke Dynamic Controls */
+    .delete-btn {
+      width: 42px; height: 42px; border-radius: 14px; border: 1px solid rgba(239, 68, 68, 0.2);
+      background: rgba(239, 68, 68, 0.04); color: #f87171;
+      display: grid; place-items: center; cursor: pointer; transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .delete-btn:hover { 
+      background: #ef4444; color: #fff; 
+      border-color: #ef4444;
+      box-shadow: 0 0 20px rgba(239, 68, 68, 0.45);
+    }
+
+    .mail-meta { font-size: 0.88rem; color: rgba(255, 255, 255, 0.5); margin-top: 6px; letter-spacing: 0.01em; }
+    .mail-meta strong { color: var(--gold-bright); font-weight: 500; }
+    
+    .source-badge {
+      font-size: 0.72rem; font-weight: 600; color: #00f2fe;
+      text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 8px;
+      display: inline-block;
+      background: rgba(0, 242, 254, 0.06);
+      padding: 3px 10px;
+      border-radius: 6px;
+      border: 1px solid rgba(0, 242, 254, 0.2);
+    }
+
+    /* Master Crafted Checkbox Controls */
+    .checkbox-container { display: grid; place-items: center; }
+    .check-box {
+      width: 28px; height: 28px; border-radius: 10px;
+      border: 1px solid rgba(212, 175, 55, 0.3); background: rgba(0,0,0,0.2);
+      cursor: pointer; display: grid; place-items: center; transition: all 0.25s ease;
+    }
+    .check-box:hover {
+      border-color: var(--gold-bright);
+      background: rgba(212, 175, 55, 0.08);
+      box-shadow: 0 0 12px rgba(212, 175, 55, 0.25);
+    }
+    .check-box.checked { 
+      background: linear-gradient(135deg, var(--gold-bright) 0%, #b89229 100%); 
+      border-color: var(--gold-bright);
+      box-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
+    }
+    .check-box svg { opacity: 0; width: 14px; height: 14px; stroke: #030a0e; transition: all 0.2s; } 
+    .check-box.checked svg { opacity: 1; }
+
+    /* Immersive Premium Lock Screen Shroud */
+    #lock-screen {
+      position: fixed; inset: 0; 
+      background: var(--vault-bg);
+      z-index: 9999; display: flex; align-items: center; justify-content: center; padding: 20px;
+      transition: opacity 0.5s ease;
+    }
+    .lock-box { 
+      text-align: center; max-width: 380px; width: 100%; 
+      background: rgba(6, 28, 35, 0.6);
+      border: 1px solid var(--glass-border);
+      padding: 48px 36px;
+      border-radius: 32px;
+      backdrop-filter: blur(45px);
+      -webkit-backdrop-filter: blur(45px);
+      box-shadow: 0 40px 80px rgba(0,0,0,0.7), inset 0 1px 1px rgba(255,255,255,0.1);
+    }
+    .lock-box input {
+      width: 100%; padding: 16px; border-radius: 14px; border: 1px solid rgba(212, 175, 55, 0.2);
+      background: rgba(0, 0, 0, 0.5); color: #fff; font-size: 16px; text-align: center; margin-bottom: 24px;
+      outline: none; transition: all 0.3s;
+      letter-spacing: 0.25em;
+    }
+    .lock-box input:focus {
+      border-color: var(--gold-bright);
+      box-shadow: 0 0 20px rgba(229, 193, 88, 0.2);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Lock Screen Gateway -->
+  <div id="lock-screen">
+    <div class="lock-box">
+      <div style="font-size: 2.2rem; margin-bottom: 16px; color: var(--gold-bright); text-shadow: 0 0 15px rgba(212,175,55,0.3);">✦</div>
+      <h3 style="margin-bottom: 8px; font-family:'Playfair Display', serif; font-size: 1.85rem; font-weight: 400; letter-spacing: -0.01em;">SABB Sovereign Vault</h3>
+      <p style="font-size: 0.85rem; color: rgba(255,255,255,0.45); margin-bottom: 32px; line-height: 1.6;">Secure structural interface. Enter your executive credential key to build the environment.</p>
+      <input type="password" id="passkey-input" placeholder="••••••••" />
+      <button onclick="verifyAdmin()" style="width:100%; cursor: pointer; padding: 16px; border-radius: 14px; font-weight: 600; background: linear-gradient(135deg, var(--gold-bright) 0%, #b89229 100%); color: #030a0e; border: none; font-size: 0.95rem; transition: all 0.2s; box-shadow: 0 8px 24px rgba(212,175,55,0.25);" onmouseover="this.style.opacity=0.9; this.style.transform='translateY(-1px)'" onmouseout="this.style.opacity=1; this.style.transform='translateY(0)'">Unlock Terminal</button>
+    </div>
+  </div>
+
+  <div class="admin-container">
+    <!-- Header Block -->
+    <div style="display: flex; justify-content: space-between; align-items: flex-end; padding-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.05);">
+      <div>
+        <div style="font-size: 0.75rem; letter-spacing: 0.25em; color: var(--gold-bright); text-transform: uppercase; margin-bottom: 4px; font-weight: 600;">Secure Console</div>
+        <h2 style="font-family: 'Playfair Display', serif; margin:0; font-size: 2.4rem; font-weight: 400; font-style: italic; color: #fff;">SABB Inbox Logs</h2>
+      </div>
+      <a href="index.html" style="color: rgba(255,255,255,0.4); font-size: 0.85rem; text-decoration: none; font-weight:500; border-bottom: 1px solid rgba(212,175,55,0.2); padding-bottom: 4px; transition: all 0.2s;" onmouseover="this.style.color='#fff'; this.style.borderBottomColor='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.4)'; this.style.borderBottomColor='rgba(212,175,55,0.2)'">Exit Terminal</a>
+    </div>
+
+    <!-- Main Dynamic Interface Holder -->
+    <div class="admin-card" id="inbox-list-wrapper"></div>
+  </div>
+
+  <script>
+    function verifyAdmin() {
+      const key = document.getElementById('passkey-input').value;
+      if(key === "SABB2026") {
+        document.getElementById('lock-screen').style.opacity = '0';
+        setTimeout(() => { document.getElementById('lock-screen').style.display = 'none'; }, 500);
+      } else {
+        alert("Invalid access key. Protection active.");
+      }
+    }
+
+    document.getElementById('passkey-input').addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') verifyAdmin();
+    });
+
+    function renderInbox() {
+      const quotes = JSON.parse(localStorage.getItem('sabb_quotes') || '[]');
+      const wrapper = document.getElementById('inbox-list-wrapper');
+
+      if(quotes.length === 0) {
+        wrapper.innerHTML = `<p style="color: rgba(255,255,255,0.3); text-align:center; padding: 70px 10px; margin: 0; font-size: 0.95rem; font-style: italic; letter-spacing: 0.02em;">No active data streams captured in local vault memory.</p>`;
+        return;
+      }
+
+      wrapper.innerHTML = quotes.map(item => `
+        <div class="mail-item ${item.completed ? 'processed' : ''}" id="quote-${item.id}">
+          
+          <div>
+            <button class="delete-btn" onclick="deleteEntry(${item.id})" title="Purge record permanently">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="3 6 5 6 21 6"></polyline>
+                <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+              </svg>
+            </button>
+          </div>
+
+          <div style="padding: 0 4px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+              <span class="source-badge">${item.source}</span>
+              <span style="color: rgba(255,255,255,0.35); font-size: 0.78rem; font-weight:500;">${item.timestamp}</span>
+            </div>
+            <h3 style="margin: 0 0 10px; color: #fff; font-size:1.35rem; font-weight: 400; font-family:'Playfair Display', serif; letter-spacing: 0.01em;">${item.name}</h3>
+            <div class="mail-meta"><strong>Phone</strong> · ${item.phone} &nbsp;&nbsp;|&nbsp;&nbsp; <strong>Email</strong> · ${item.email}</div>
+            <div class="mail-meta"><strong>Coverage</strong> · ${item.type} &nbsp;&nbsp;|&nbsp;&nbsp; <strong>Limit Target</strong> · ${item.limit}</div>
+            
+            <!-- Embedded Floating Slate for Notes -->
+            <div style="margin-top: 18px; font-size: 0.92rem; line-height: 1.6; padding: 16px 20px; background: rgba(3, 10, 14, 0.6); border-radius: 12px; border: 1px solid rgba(255,255,255,0.02); border-left: 3px solid var(--gold-bright); color: rgba(255,255,255,0.8); box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);">
+              ${item.details || 'No structural context added by prospect.'}
+            </div>
+          </div>
+
+          <div class="checkbox-container">
+            <div class="check-box ${item.completed ? 'checked' : ''}" onclick="toggleStatus(${item.id})" title="Toggle archive visibility">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+          </div>
+
+        </div>
+      `).join('');
+    }
+
+    function toggleStatus(id) {
+      let quotes = JSON.parse(localStorage.getItem('sabb_quotes') || '[]');
+      quotes = quotes.map(item => {
+        if(item.id === id) item.completed = !item.completed;
+        return item;
+      });
+      localStorage.setItem('sabb_quotes', JSON.stringify(quotes));
+      renderInbox();
+    }
+
+    function deleteEntry(id) {
+      if(confirm("Confirm structural deletion? This removes the secure entry completely.")) {
+        let quotes = JSON.parse(localStorage.getItem('sabb_quotes') || '[]');
+        quotes = quotes.filter(item => item.id !== id);
+        localStorage.setItem('sabb_quotes', JSON.stringify(quotes));
+        renderInbox();
+      }
+    }
+
+    window.addEventListener('DOMContentLoaded', renderInbox);
+  </script>
+</body>
+</html>

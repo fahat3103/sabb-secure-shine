@@ -165,62 +165,87 @@
 
       <!-- Compact Touch-Optimized Form -->
       <div class="quote-form-container">
-        <form class="contact-form">
-          
-          <div class="field">
-            <label>Full Name</label>
-            <input type="text" required placeholder="Jane Doe" />
-          </div>
+  <form class="contact-form" id="quoteForm">
+    
+    <div class="field">
+      <label>Full Name</label>
+      <input type="text" id="clientName" required placeholder="Jane Doe" />
+    </div>
 
-          <div class="field">
-            <label>Phone Number</label>
-            <input type="tel" required placeholder="+254 7XX XXX XXX" />
-          </div>
+    <div class="field">
+      <label>Phone Number</label>
+      <input type="tel" id="clientPhone" required placeholder="+254 7XX XXX XXX" />
+    </div>
 
-          <div class="field">
-            <label>Email Address</label>
-            <input type="email" required placeholder="you@example.com" />
-          </div>
+    <div class="field">
+      <label>Email Address</label>
+      <input type="email" id="clientEmail" required placeholder="you@example.com" />
+    </div>
 
-          <div class="field">
-            <label>Insurance Target</label>
-            <select id="insurance-type">
-              <option value="motor">Motor Insurance</option>
-              <option value="medical">Medical Insurance</option>
-              <option value="life">Life Insurance / Assurance</option>
-              <option value="business">Business / Asset Protection</option>
-              <option value="marine">Marine / Fire Insurance</option>
-              <option value="other">Other Coverage Lines</option>
-            </select>
-          </div>
+    <div class="field">
+      <label>Insurance Target</label>
+      <select id="insuranceType">
+        <option>Motor Insurance</option>
+        <option>Medical Insurance</option>
+        <option>Life Insurance / Assurance</option>
+        <option>Business / Asset Protection</option>
+        <option>Marine / Fire Insurance</option>
+        <option>Other Coverage Lines</option>
+      </select>
+    </div>
 
-          <div class="field">
-            <label>Estimated Coverage Limit</label>
-            <input type="text" placeholder="e.g. KSh 5,000,000" />
-          </div>
+    <div class="field">
+      <label>Estimated Coverage Limit</label>
+      <input type="text" id="coverageLimit" placeholder="e.g. KSh 5,000,000" />
+    </div>
 
-          <div class="field">
-            <label>Specific Requirements</label>
-            <textarea placeholder="Describe the assets, medical needs, or timeline choices you want us to evaluate..."></textarea>
-          </div>
+    <div class="field">
+      <label>Specific Requirements</label>
+      <textarea id="clientMessage" placeholder="Describe the assets, medical needs, or timeline choices you want us to evaluate..."></textarea>
+    </div>
 
-          <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center; margin-top: 6px; padding: 15px 20px; border-radius: 12px;">
-            Submit Request
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:16px; height:16px;"><path d="M5 12h14M13 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </button>
-        </form>
-      </div>
+    <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center; margin-top: 6px; padding: 15px 20px; border-radius: 12px;">
+      Submit Request
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:16px; height:16px;"><path d="M5 12h14M13 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+  </form>
+</div>
 
     </div>
   </section>
 
   <!-- MOBILE FOOTER -->
-  <footer class="mobile-quote-footer">
-    <div class="container">
-      <div>© <span id="year"></span> SABB Insurance Brokers Limited.</div>
-      <div style="color: var(--gold-light); margin-top: 4px; font-weight: 500;">Securing Futures Together</div>
-    </div>
-  </footer>
+  <footer class="mobile-quote-footer" style="text-align: center; padding: 20px 0;">
+  <div class="container">
+    <div>© <span id="year"></span> SABB Insurance Brokers Limited.</div>
+    <div style="color: var(--gold-light); margin-top: 4px; font-weight: 500;">Securing Futures Together</div>
+    
+    <!-- Premium Padlock Link -->
+    <a href="mails.html" id="admin-padlock-link" style="text-decoration: none; display: inline-block; margin-top: 12px; transition: transform 0.3s ease;">
+      <div class="padlock-icon" style="
+        width: 32px; 
+        height: 32px; 
+        background: rgba(255, 215, 0, 0.1); 
+        border: 1px solid var(--gold-light); 
+        border-radius: 50%; 
+        display: flex; 
+        align-items: center; 
+        justify-content: center;
+        backdrop-filter: blur(4px);
+        box-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
+        cursor: pointer;
+        transition: all 0.3s ease;
+      ">
+        <!-- Minimalist Elegant SVG Padlock -->
+        <svg width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="1" y="6" width="12" height="9" rx="2" stroke="var(--gold-light)" stroke-width="1.5"/>
+          <path d="M3.5 6V3.5C3.5 2.11929 4.61929 1 6 1H8C9.38071 1 10.5 2.11929 10.5 3.5V6" stroke="var(--gold-light)" stroke-width="1.5"/>
+          <circle cx="7" cy="10.5" r="1" fill="var(--gold-light)"/>
+        </svg>
+      </div>
+    </a>
+  </div>
+</footer>
 
   <script src="script.js"></script>
 </body>

@@ -487,7 +487,10 @@
             </li>
             <li>
               <div class="ic"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
-              <div><strong>Hours</strong><br><span>Mon – Fri · 8:00am – 5:30pm</span></div>
+              <div>
+                <strong>Hours</strong><br><span>Mon – Fri · 8:30am – 5:00pm</span>
+                <br><span>Sat      · 8:30am – 1:00pm</span>
+              </div>
             </li>
           </ul>
           <div class="socials">
@@ -499,29 +502,58 @@
         </div>
 
         <div class="reveal">
-          <form class="contact-form">
-            <h3>Request a quote</h3>
-            <p>We'll reply within one business day.</p>
-            <div class="form-row">
-              <div class="field"><label>Full Name</label><input type="text" required placeholder="Jane Doe" /></div>
-              <div class="field"><label>Phone</label><input type="tel" required placeholder="+254 7XX XXX XXX" /></div>
-            </div>
-            <div class="field"><label>Email</label><input type="email" required placeholder="you@example.com" /></div>
-            <div class="field">
-              <label>Insurance Interest</label>
-              <select>
-                <option>Motor Insurance</option>
-                <option>Medical Insurance</option>
-                <option>Life Insurance</option>
-                <option>Business Insurance</option>
-                <option>Other</option>
-              </select>
-            </div>
-            <div class="field"><label>Message</label><textarea placeholder="Tell us what you'd like to protect..."></textarea></div>
-            <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center;">Send Message</button>
-          </form>
-          <div class="map-box"><div class="map-pin"></div></div>
-        </div>
+  <form class="contact-form" id="quoteForm">
+    <h3>Request a quote</h3>
+    <p>We'll reply within one business day.</p>
+    <div class="form-row">
+      <div class="field">
+        <label>Full Name</label>
+        <input type="text" id="clientName" required placeholder="Jane Doe" />
+      </div>
+      <div class="field">
+        <label>Phone</label>
+        <input type="tel" id="clientPhone" required placeholder="+254 7XX XXX XXX" />
+      </div>
+    </div>
+    <div class="field">
+      <label>Email</label>
+      <input type="email" id="clientEmail" required placeholder="you@example.com" />
+    </div>
+    <div class="field">
+      <label>Insurance Interest</label>
+      <select id="insuranceType">
+        <option>Motor Insurance</option>
+        <option>Medical Insurance</option>
+        <option>Life Insurance</option>
+        <option>Business Insurance</option>
+        <option>Other</option>
+      </select>
+    </div>
+    <div class="field">
+      <label>Estimated Coverage Limit</label>
+      <input type="text" id="coverageLimit" placeholder="e.g. KSh 5,000,000" />
+    </div>
+    <div class="field">
+      <label>Message</label>
+      <textarea id="clientMessage" placeholder="Tell us what you'd like to protect..."></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center;">Send Message</button>
+  </form>
+  <div class="map-box">
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4037.5190227155063!2d36.80598211036024!3d-1.2691761290238786!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f17395dd773ef%3A0x91d9089496a5a961!2sMj1%20Business%20Park!5e0!3m2!1sen!2ske!4v1782492919110!5m2!1sen!2ske" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+
+  <div class="map-pin-overlay">
+    <div class="map-pin"></div>
+  </div>
+  
+  <div class="office-suite-badge">
+    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-right:4px; vertical-align:middle;">
+      <path d="M3 21h18M3 7V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v2M5 21V7a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v14" stroke-linecap="round"/>
+    </svg>
+    10th Floor, Suite No. 1006
+  </div>
+</div>
+</div>
       </div>
     </div>
   </section>
@@ -579,7 +611,7 @@
   <button id="toTop" aria-label="Back to top">
     <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 19V5M5 12l7-7 7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
   </button>
-
+  
   <script src="script.js"></script>
 </body>
 </html>
