@@ -9,7 +9,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-  
+  <link rel="apple-touch-icon" sizes="180x180" href="sabb fav.png">
+
   <style>
     /* Ultra-Premium Kinetic Luxury Palette & Hyper-Reflective Glass */
     :root {
@@ -211,89 +212,6 @@
     <div class="admin-card" id="inbox-list-wrapper"></div>
   </div>
 
-  <script>
-    function verifyAdmin() {
-      const key = document.getElementById('passkey-input').value;
-      if(key === "SABB2026") {
-        document.getElementById('lock-screen').style.opacity = '0';
-        setTimeout(() => { document.getElementById('lock-screen').style.display = 'none'; }, 500);
-      } else {
-        alert("Invalid access key. Protection active.");
-      }
-    }
-
-    document.getElementById('passkey-input').addEventListener('keypress', function(e) {
-      if (e.key === 'Enter') verifyAdmin();
-    });
-
-    function renderInbox() {
-      const quotes = JSON.parse(localStorage.getItem('sabb_quotes') || '[]');
-      const wrapper = document.getElementById('inbox-list-wrapper');
-
-      if(quotes.length === 0) {
-        wrapper.innerHTML = `<p style="color: rgba(255,255,255,0.3); text-align:center; padding: 70px 10px; margin: 0; font-size: 0.95rem; font-style: italic; letter-spacing: 0.02em;">No active data streams captured in local vault memory.</p>`;
-        return;
-      }
-
-      wrapper.innerHTML = quotes.map(item => `
-        <div class="mail-item ${item.completed ? 'processed' : ''}" id="quote-${item.id}">
-          
-          <div>
-            <button class="delete-btn" onclick="deleteEntry(${item.id})" title="Purge record permanently">
-              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5">
-                <polyline points="3 6 5 6 21 6"></polyline>
-                <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
-              </svg>
-            </button>
-          </div>
-
-          <div style="padding: 0 4px;">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
-              <span class="source-badge">${item.source}</span>
-              <span style="color: rgba(255,255,255,0.35); font-size: 0.78rem; font-weight:500;">${item.timestamp}</span>
-            </div>
-            <h3 style="margin: 0 0 10px; color: #fff; font-size:1.35rem; font-weight: 400; font-family:'Playfair Display', serif; letter-spacing: 0.01em;">${item.name}</h3>
-            <div class="mail-meta"><strong>Phone</strong> · ${item.phone} &nbsp;&nbsp;|&nbsp;&nbsp; <strong>Email</strong> · ${item.email}</div>
-            <div class="mail-meta"><strong>Coverage</strong> · ${item.type} &nbsp;&nbsp;|&nbsp;&nbsp; <strong>Limit Target</strong> · ${item.limit}</div>
-            
-            <!-- Embedded Floating Slate for Notes -->
-            <div style="margin-top: 18px; font-size: 0.92rem; line-height: 1.6; padding: 16px 20px; background: rgba(3, 10, 14, 0.6); border-radius: 12px; border: 1px solid rgba(255,255,255,0.02); border-left: 3px solid var(--gold-bright); color: rgba(255,255,255,0.8); box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);">
-              ${item.details || 'No structural context added by prospect.'}
-            </div>
-          </div>
-
-          <div class="checkbox-container">
-            <div class="check-box ${item.completed ? 'checked' : ''}" onclick="toggleStatus(${item.id})" title="Toggle archive visibility">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="20 6 9 17 4 12"></polyline>
-              </svg>
-            </div>
-          </div>
-
-        </div>
-      `).join('');
-    }
-
-    function toggleStatus(id) {
-      let quotes = JSON.parse(localStorage.getItem('sabb_quotes') || '[]');
-      quotes = quotes.map(item => {
-        if(item.id === id) item.completed = !item.completed;
-        return item;
-      });
-      localStorage.setItem('sabb_quotes', JSON.stringify(quotes));
-      renderInbox();
-    }
-
-    function deleteEntry(id) {
-      if(confirm("Confirm structural deletion? This removes the secure entry completely.")) {
-        let quotes = JSON.parse(localStorage.getItem('sabb_quotes') || '[]');
-        quotes = quotes.filter(item => item.id !== id);
-        localStorage.setItem('sabb_quotes', JSON.stringify(quotes));
-        renderInbox();
-      }
-    }
-
-    window.addEventListener('DOMContentLoaded', renderInbox);
-  </script>
+  <script type="module" src="admin-inbox.js"></script>
 </body>
 </html>
