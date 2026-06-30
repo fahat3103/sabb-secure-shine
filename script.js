@@ -124,7 +124,90 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  
+  const leaderTabs = document.querySelectorAll(".leader-tab");
+const leaderPhoto = document.getElementById("leaderPhoto");
+const leaderName = document.getElementById("leaderName");
+const leaderRole = document.getElementById("leaderRole");
+const leaderBio = document.getElementById("leaderBio");
+const leaderFocus = document.getElementById("leaderFocus");
+
+leaderTabs.forEach((tab) => {
+  tab.addEventListener("click", () => {
+    leaderTabs.forEach((item) => item.classList.remove("active"));
+    tab.classList.add("active");
+
+    leaderPhoto.style.opacity = "0";
+
+    setTimeout(() => {
+      leaderPhoto.src = tab.dataset.photo;
+      leaderPhoto.alt = tab.dataset.name;
+      leaderName.textContent = tab.dataset.name;
+      leaderRole.textContent = tab.dataset.role;
+      leaderBio.textContent = tab.dataset.bio;
+      leaderFocus.textContent = tab.dataset.focus;
+      leaderPhoto.style.opacity = "1";
+    }, 180);
+  });
+});
+
+
+
+const leadershipSlider = document.querySelector(".leadership-slider");
+const leaderCards = document.querySelectorAll(".leader-card");
+const leaderDotsWrap = document.getElementById("leaderDots");
+const leaderPrev = document.getElementById("leaderPrev");
+const leaderNext = document.getElementById("leaderNext");
+
+if (leadershipSlider && leaderCards.length && leaderDotsWrap) {
+  let activeLeader = 0;
+
+  leaderCards.forEach((_, index) => {
+    const dot = document.createElement("button");
+    dot.type = "button";
+    dot.className = "leader-dot" + (index === 0 ? " active" : "");
+    dot.setAttribute("aria-label", `Go to leader ${index + 1}`);
+    dot.addEventListener("click", () => goToLeader(index));
+    leaderDotsWrap.appendChild(dot);
+  });
+
+  const updateLeaderDots = () => {
+    document.querySelectorAll(".leader-dot").forEach((dot, index) => {
+      dot.classList.toggle("active", index === activeLeader);
+    });
+  };
+
+  const goToLeader = (index) => {
+    activeLeader = (index + leaderCards.length) % leaderCards.length;
+    leaderCards[activeLeader].scrollIntoView({
+      behavior: "smooth",
+      block: "nearest",
+      inline: "center"
+    });
+    updateLeaderDots();
+  };
+
+  leaderPrev?.addEventListener("click", () => goToLeader(activeLeader - 1));
+  leaderNext?.addEventListener("click", () => goToLeader(activeLeader + 1));
+
+  leadershipSlider.addEventListener("scroll", () => {
+    const sliderCenter = leadershipSlider.scrollLeft + leadershipSlider.offsetWidth / 2;
+    let closest = 0;
+    let closestDistance = Infinity;
+
+    leaderCards.forEach((card, index) => {
+      const cardCenter = card.offsetLeft + card.offsetWidth / 2;
+      const distance = Math.abs(sliderCenter - cardCenter);
+
+      if (distance < closestDistance) {
+        closestDistance = distance;
+        closest = index;
+      }
+    });
+
+    activeLeader = closest;
+    updateLeaderDots();
+  }, { passive: true });
+}
 
   onScroll();
 });

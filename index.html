@@ -9,8 +9,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
-  <link rel="icon" type="image/png" href="sabb-favicon.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="sabb-favicon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./sabb-favicon.png?v=3">
+<link rel="shortcut icon" href="./sabb-favicon.png?v=3">
+<link rel="apple-touch-icon" sizes="180x180" href="./sabb-favicon.png?v=3">
 </head>
 <body>
 
@@ -162,6 +163,60 @@
     </div>
   </section>
 
+  <section id="leadership" class="leadership-section">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Leadership</span>
+      <h2>Led by people who understand protection, trust and service.</h2>
+      <p>Meet the leadership team guiding SABB Insurance Brokers Limited with experience, care and professional discipline.</p>
+    </div>
+
+    <div class="leadership-slider reveal" aria-label="Leadership profiles">
+      <article class="leader-card active">
+        <div class="leader-photo-frame">
+          <img src="img 1.jpg" alt="Sabir X">
+        </div>
+        <div class="leader-info">
+          <span>Chief Executive Officer</span>
+          <h3>Sabir X</h3>
+          <p>Provides strategic leadership, client relationship direction and market oversight for SABB Insurance Brokers Limited.</p>
+          <div class="leader-signature">Strategic Growth · Client Trust · Governance</div>
+        </div>
+      </article>
+
+      <article class="leader-card">
+        <div class="leader-photo-frame">
+          <img src="img 2.jpg" alt="Director Name">
+        </div>
+        <div class="leader-info">
+          <span>Director</span>
+          <h3>Director Name</h3>
+          <p>Supports business development, operational discipline and long-term partner relationships across insurance lines.</p>
+          <div class="leader-signature">Operations · Partnerships · Advisory</div>
+        </div>
+      </article>
+
+      <article class="leader-card">
+        <div class="leader-photo-frame">
+          <img src="img 3.jpg" alt="CFO Name">
+        </div>
+        <div class="leader-info">
+          <span>Chief Financial Officer</span>
+          <h3>CFO Name</h3>
+          <p>Guides compliance, risk awareness and client-first service standards across the brokerage.</p>
+          <div class="leader-signature">Compliance · Risk · Service Quality</div>
+        </div>
+      </article>
+    </div>
+
+    <div class="leader-controls reveal">
+      <button type="button" class="leader-arrow" id="leaderPrev" aria-label="Previous leader">‹</button>
+      <div class="leader-dots" id="leaderDots"></div>
+      <button type="button" class="leader-arrow" id="leaderNext" aria-label="Next leader">›</button>
+    </div>
+  </div>
+</section>
+
   <!-- WHY -->
   <section id="why">
     <div class="container">
@@ -207,127 +262,150 @@
   </section>
 
   <!-- SERVICES -->
-  <section id="services">
-    <div class="container">
-      <div class="section-head reveal">
-        <span class="eyebrow">Insurance Services</span>
-        <h2>Comprehensive cover across every line that matters.</h2>
-        <p>From personal protection to enterprise-grade asset and liability cover — explore the policies we structure and place every day.</p>
+<section id="services">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Insurance Services</span>
+      <h2>Comprehensive cover across every line that matters.</h2>
+      <p>From personal protection to enterprise-grade asset and liability cover — explore the policies we structure and place every day.</p>
+    </div>
+
+    <div class="services-grid">
+      <div class="svc-card reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/></svg></div>
+        <h3>General Insurance</h3>
+        <p>Comprehensive everyday protection across property, mobility and liability.</p>
+        <a href="services.html#general-insurance" class="btn-link">Learn More</a>
       </div>
 
-      <div class="services-grid">
-        <!-- card template repeated -->
-        <div class="svc-card reveal">
-          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/></svg></div>
-          <h3>General Insurance</h3>
-          <p>Comprehensive everyday protection across property, mobility and liability.</p>
-          <a href="#contact" class="btn-link">Learn More</a>
-        </div>
-        <div class="svc-card reveal">
-          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 17h14M5 17a2 2 0 11-4 0M19 17a2 2 0 104 0M3 13l2-6h14l2 6"/></svg></div>
-          <h3>Motor Insurance</h3>
-          <p>Third-party, comprehensive and commercial vehicle cover with quick claims.</p>
-          <a href="#contact" class="btn-link">Learn More</a>
-        </div>
-        <div class="svc-card reveal">
-          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2s4 4 4 8a4 4 0 11-8 0c0-2 1-3 2-5 .5 1 1 2 2 2 0-2-1-3 0-5z"/></svg></div>
-          <h3>Fire Insurance</h3>
-          <p>Protect buildings, stock and equipment against fire, lightning and explosion.</p>
-          <a href="#contact" class="btn-link">Learn More</a>
-        </div>
-        <div class="svc-card reveal">
-          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg></div>
-          <h3>Burglary Insurance</h3>
-          <p>Cover against theft, forcible entry and damage to insured property.</p>
-          <a href="#contact" class="btn-link">Learn More</a>
-        </div>
-        <div class="svc-card reveal">
-          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 11-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 11-2.83-2.83l.06-.06A1.65 1.65 0 004.6 15a1.65 1.65 0 00-1.51-1H3a2 2 0 110-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 112.83-2.83l.06.06A1.65 1.65 0 009 4.6a1.65 1.65 0 001-1.51V3a2 2 0 114 0v.09A1.65 1.65 0 0015 4.6a1.65 1.65 0 001.82-.33l.06-.06a2 2 0 112.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 110 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg></div>
-          <h3>Engineering Insurance</h3>
-          <p>Contractor all-risks, plant, machinery breakdown and erection cover.</p>
-          <a href="#contact" class="btn-link">Learn More</a>
-        </div>
-        <div class="svc-card reveal">
-          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s2-4 10-4 10 4 10 4-2 4-10 4-10-4-10-4z"/><path d="M2 12c0 4 4 8 10 8s10-4 10-8"/></svg></div>
-          <h3>Marine Insurance</h3>
-          <p>Goods-in-transit, cargo and hull cover for sea, air and land shipments.</p>
-          <a href="#contact" class="btn-link">Learn More</a>
-        </div>
-        <div class="svc-card reveal">
-          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 000-7.78z"/></svg></div>
-          <h3>Medical Insurance</h3>
-          <p>Inpatient, outpatient, maternity, dental and optical care benefits.</p>
-          <a href="#contact" class="btn-link">Learn More</a>
-        </div>
-        <div class="svc-card reveal">
-          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="7" r="4"/><path d="M4 21a8 8 0 0116 0"/></svg></div>
-          <h3>Individual Medical</h3>
-          <p>Personal health cover scaled to your lifestyle and chosen hospital tier.</p>
-          <a href="#contact" class="btn-link">Learn More</a>
-        </div>
-        <div class="svc-card reveal">
-          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-3-3.87M9 21v-2a4 4 0 013-3.87"/><circle cx="9" cy="7" r="3"/><circle cx="17" cy="7" r="3"/></svg></div>
-          <h3>Family Medical Cover</h3>
-          <p>One policy covering spouse and children with maternity benefits.</p>
-          <a href="#contact" class="btn-link">Learn More</a>
-        </div>
-        <div class="svc-card reveal">
-          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M16 3H8v4M3 13h18"/></svg></div>
-          <h3>Corporate Medical</h3>
-          <p>Group health schemes that attract and retain top talent.</p>
-          <a href="#contact" class="btn-link">Learn More</a>
-        </div>
-        <div class="svc-card reveal">
-          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
-          <h3>Life Insurance</h3>
-          <p>Income protection and dependants' security with flexible premiums.</p>
-          <a href="#contact" class="btn-link">Learn More</a>
-        </div>
-        <div class="svc-card reveal">
-          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 000-7.78z"/></svg></div>
-          <h3>Life Assurance</h3>
-          <p>Whole-of-life cover combining protection with long-term savings.</p>
-          <a href="#contact" class="btn-link">Learn More</a>
-        </div>
-        <div class="svc-card reveal">
-          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></svg></div>
-          <h3>Education Plans</h3>
-          <p>Structured savings policies that secure your child's academic journey.</p>
-          <a href="#contact" class="btn-link">Learn More</a>
-        </div>
-        <div class="svc-card reveal">
-          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
-          <h3>Retirement Plans</h3>
-          <p>Pension and annuity products to fund the lifestyle you've earned.</p>
-          <a href="#contact" class="btn-link">Learn More</a>
-        </div>
-        <div class="svc-card reveal">
-          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V7l8-4 8 4v14M9 21v-6h6v6"/></svg></div>
-          <h3>Business Insurance</h3>
-          <p>End-to-end SME and corporate risk packages, including BI cover.</p>
-          <a href="#contact" class="btn-link">Learn More</a>
-        </div>
-        <div class="svc-card reveal">
-          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6v6H9z"/></svg></div>
-          <h3>Asset Protection</h3>
-          <p>Cover for plant, electronics, machinery and high-value items.</p>
-          <a href="#contact" class="btn-link">Learn More</a>
-        </div>
-        <div class="svc-card reveal">
-          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-          <h3>Liability Insurance</h3>
-          <p>Public, product and professional indemnity cover for peace of mind.</p>
-          <a href="#contact" class="btn-link">Learn More</a>
-        </div>
-        <div class="svc-card reveal">
-          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
-          <h3>Employee Benefits</h3>
-          <p>Group life, WIBA, pension and health solutions for your workforce.</p>
-          <a href="#contact" class="btn-link">Learn More</a>
-        </div>
+      <div class="svc-card reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 17h14M5 17a2 2 0 11-4 0M19 17a2 2 0 104 0M3 13l2-6h14l2 6"/></svg></div>
+        <h3>Motor Insurance</h3>
+        <p>Third-party, comprehensive and commercial vehicle cover with quick claims.</p>
+        <a href="services.html#motor-insurance" class="btn-link">Learn More</a>
+      </div>
+
+      <div class="svc-card reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2s4 4 4 8a4 4 0 11-8 0c0-2 1-3 2-5 .5 1 1 2 2 2 0-2-1-3 0-5z"/></svg></div>
+        <h3>Fire Insurance</h3>
+        <p>Protect buildings, stock and equipment against fire, lightning and explosion.</p>
+        <a href="services.html#fire-insurance" class="btn-link">Learn More</a>
+      </div>
+
+      <div class="svc-card reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg></div>
+        <h3>Burglary Insurance</h3>
+        <p>Cover against theft, forcible entry and damage to insured property.</p>
+        <a href="services.html#burglary-insurance" class="btn-link">Learn More</a>
+      </div>
+
+      <div class="svc-card reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 11-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 11-2.83-2.83l.06-.06A1.65 1.65 0 004.6 15a1.65 1.65 0 00-1.51-1H3a2 2 0 110-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 112.83-2.83l.06.06A1.65 1.65 0 009 4.6a1.65 1.65 0 001-1.51V3a2 2 0 114 0v.09A1.65 1.65 0 0015 4.6a1.65 1.65 0 001.82-.33l.06-.06a2 2 0 112.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 110 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg></div>
+        <h3>Engineering Insurance</h3>
+        <p>Contractor all-risks, plant, machinery breakdown and erection cover.</p>
+        <a href="services.html#engineering-insurance" class="btn-link">Learn More</a>
+      </div>
+
+      <div class="svc-card reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s2-4 10-4 10 4 10 4-2 4-10 4-10-4-10-4z"/><path d="M2 12c0 4 4 8 10 8s10-4 10-8"/></svg></div>
+        <h3>Marine Insurance</h3>
+        <p>Goods-in-transit, cargo and hull cover for sea, air and land shipments.</p>
+        <a href="services.html#marine-insurance" class="btn-link">Learn More</a>
+      </div>
+
+      <div class="svc-card reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 000-7.78z"/></svg></div>
+        <h3>Medical Insurance</h3>
+        <p>Inpatient, outpatient, maternity, dental and optical care benefits.</p>
+        <a href="services.html#medical-insurance" class="btn-link">Learn More</a>
+      </div>
+
+      <div class="svc-card reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="7" r="4"/><path d="M4 21a8 8 0 0116 0"/></svg></div>
+        <h3>Individual Medical</h3>
+        <p>Personal health cover scaled to your lifestyle and chosen hospital tier.</p>
+        <a href="services.html#individual-medical" class="btn-link">Learn More</a>
+      </div>
+
+      <div class="svc-card reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-3-3.87M9 21v-2a4 4 0 013-3.87"/><circle cx="9" cy="7" r="3"/><circle cx="17" cy="7" r="3"/></svg></div>
+        <h3>Family Medical Cover</h3>
+        <p>One policy covering spouse and children with maternity benefits.</p>
+        <a href="services.html#family-medical-cover" class="btn-link">Learn More</a>
+      </div>
+
+      <div class="svc-card reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M16 3H8v4M3 13h18"/></svg></div>
+        <h3>Corporate Medical</h3>
+        <p>Group health schemes that attract and retain top talent.</p>
+        <a href="services.html#corporate-medical" class="btn-link">Learn More</a>
+      </div>
+
+      <div class="svc-card reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+        <h3>Life Insurance</h3>
+        <p>Income protection and dependants' security with flexible premiums.</p>
+        <a href="services.html#life-insurance" class="btn-link">Learn More</a>
+      </div>
+
+      <div class="svc-card reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 000-7.78z"/></svg></div>
+        <h3>Life Assurance</h3>
+        <p>Whole-of-life cover combining protection with long-term savings.</p>
+        <a href="services.html#life-assurance" class="btn-link">Learn More</a>
+      </div>
+
+      <div class="svc-card reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></svg></div>
+        <h3>Education Plans</h3>
+        <p>Structured savings policies that secure your child's academic journey.</p>
+        <a href="services.html#education-plans" class="btn-link">Learn More</a>
+      </div>
+
+      <div class="svc-card reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
+        <h3>Retirement Plans</h3>
+        <p>Pension and annuity products to fund the lifestyle you've earned.</p>
+        <a href="services.html#retirement-plans" class="btn-link">Learn More</a>
+      </div>
+
+      <div class="svc-card reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V7l8-4 8 4v14M9 21v-6h6v6"/></svg></div>
+        <h3>Business Insurance</h3>
+        <p>End-to-end SME and corporate risk packages, including BI cover.</p>
+        <a href="services.html#business-insurance" class="btn-link">Learn More</a>
+      </div>
+
+      <div class="svc-card reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6v6H9z"/></svg></div>
+        <h3>Asset Protection</h3>
+        <p>Cover for plant, electronics, machinery and high-value items.</p>
+        <a href="services.html#asset-protection" class="btn-link">Learn More</a>
+      </div>
+
+      <div class="svc-card reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <h3>Liability Insurance</h3>
+        <p>Public, product and professional indemnity cover for peace of mind.</p>
+        <a href="services.html#liability-insurance" class="btn-link">Learn More</a>
+      </div>
+
+      <div class="svc-card reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
+        <h3>Employee Benefits</h3>
+        <p>Group life, WIBA, pension and health solutions for your workforce.</p>
+        <a href="services.html#employee-benefits" class="btn-link">Learn More</a>
+      </div>
+
+      <div class="svc-card reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 16l20-8-8 20-4-8-8-4z"/><path d="M10 20l4-4"/></svg></div>
+        <h3>Aviation Insurance</h3>
+        <p>Specialized protection for aircraft, aviation operations and related liabilities.</p>
+        <a href="services.html#aviation-insurance" class="btn-link">Learn More</a>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- COMPLIANCE -->
   <section id="compliance">
@@ -498,8 +576,11 @@
           <div class="socials">
             <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 10-11.6 9.9v-7H8v-3h2.4V9.5c0-2.4 1.4-3.7 3.6-3.7 1 0 2.1.2 2.1.2v2.3h-1.2c-1.2 0-1.5.7-1.5 1.5V12H16l-.4 3h-2.2v7A10 10 0 0022 12z"/></svg></a>
             <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5A2.5 2.5 0 112.5 6 2.5 2.5 0 014.98 3.5zM3 8.98h4v12H3zM10 8.98h3.8v1.64h.06a4.17 4.17 0 013.75-2.06c4 0 4.74 2.64 4.74 6.07v6.35h-4v-5.63c0-1.34 0-3.07-1.87-3.07s-2.16 1.46-2.16 2.97v5.73h-4z"/></svg></a>
-            <a href="#" aria-label="Twitter"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 5.8a8.3 8.3 0 01-2.36.65A4.1 4.1 0 0021.45 4a8.2 8.2 0 01-2.6 1A4.1 4.1 0 0012 8.7c0 .32.04.64.1.94A11.6 11.6 0 013 4.6a4.1 4.1 0 001.27 5.5 4.1 4.1 0 01-1.86-.52v.05a4.1 4.1 0 003.3 4 4.1 4.1 0 01-1.85.07 4.1 4.1 0 003.83 2.85A8.24 8.24 0 012 18.3a11.6 11.6 0 006.3 1.85c7.55 0 11.68-6.25 11.68-11.67v-.53A8.4 8.4 0 0022 5.8z"/></svg></a>
-            <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+<a href="#" aria-label="X">
+  <svg viewBox="0 0 24 24" fill="currentColor">
+    <path d="M18.244 2H21.5l-7.11 8.13L22.75 22h-6.54l-5.12-6.69L5.23 22H1.97l7.6-8.69L1.55 2h6.7l4.63 6.12L18.244 2zm-1.14 17.9h1.8L7.27 3.99H5.34L17.104 19.9z"/>
+  </svg>
+</a>            <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
           </div>
         </div>
 
