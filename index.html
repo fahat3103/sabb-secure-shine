@@ -1,707 +1,369 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SABB Insurance Brokers Limited — Securing Futures Together</title>
-  <meta name="description" content="SABB Insurance Brokers Limited offers tailored insurance solutions — motor, medical, life, marine, fire, business and more. Independent advice, expert claims support." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
-  <link rel="icon" type="image/png" sizes="32x32" href="./sabb-favicon.png?v=3">
-<link rel="shortcut icon" href="./sabb-favicon.png?v=3">
-<link rel="apple-touch-icon" sizes="180x180" href="./sabb-favicon.png?v=3">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SABB Insurance Brokers Limited</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+height:100vh;
+overflow:hidden;
+background:#071225;
+display:flex;
+justify-content:center;
+align-items:center;
+position:relative;
+color:white;
+}
+
+/* Animated Background */
+
+body::before{
+content:'';
+position:absolute;
+width:220%;
+height:220%;
+background:
+radial-gradient(circle at 20% 20%,#00d4ff55 0%,transparent 35%),
+radial-gradient(circle at 80% 25%,#0077ff33 0%,transparent 30%),
+radial-gradient(circle at 50% 80%,#00ffd055 0%,transparent 30%),
+linear-gradient(135deg,#03111f,#071d37,#0b2749,#051221);
+animation:bgMove 18s linear infinite alternate;
+}
+
+@keyframes bgMove{
+0%{
+transform:translate(-10%,-10%) rotate(0deg);
+}
+100%{
+transform:translate(-5%,-8%) rotate(5deg);
+}
+}
+
+/* Floating Circles */
+
+.circle{
+position:absolute;
+border-radius:50%;
+background:rgba(255,255,255,.04);
+backdrop-filter:blur(10px);
+animation:float 18s linear infinite;
+}
+
+.circle:nth-child(1){
+width:180px;
+height:180px;
+top:8%;
+left:8%;
+}
+
+.circle:nth-child(2){
+width:300px;
+height:300px;
+bottom:-80px;
+right:-80px;
+animation-duration:25s;
+}
+
+.circle:nth-child(3){
+width:100px;
+height:100px;
+top:65%;
+left:15%;
+animation-duration:15s;
+}
+
+@keyframes float{
+
+0%{
+transform:translateY(0px);
+}
+
+50%{
+transform:translateY(-35px);
+}
+
+100%{
+transform:translateY(0px);
+}
+
+}
+
+/* Glass Card */
+
+.container{
+
+position:relative;
+z-index:10;
+width:92%;
+max-width:850px;
+
+padding:70px;
+
+border-radius:30px;
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(30px);
+
+border:1px solid rgba(255,255,255,.15);
+
+box-shadow:
+0 30px 70px rgba(0,0,0,.45),
+inset 0 0 0 1px rgba(255,255,255,.08);
+
+text-align:center;
+
+animation:fadeUp 1.2s ease;
+
+}
+
+@keyframes fadeUp{
+
+from{
+opacity:0;
+transform:translateY(40px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+
+.logo{
+
+width:90px;
+height:90px;
+margin:auto;
+margin-bottom:25px;
+
+border-radius:22px;
+
+background:linear-gradient(135deg,#0fd3ff,#0066ff);
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+font-size:40px;
+
+box-shadow:
+0 10px 35px rgba(0,180,255,.45);
+
+}
+
+.small{
+
+letter-spacing:6px;
+font-size:14px;
+color:#86d8ff;
+margin-bottom:15px;
+text-transform:uppercase;
+
+}
+
+h1{
+
+font-size:60px;
+font-weight:800;
+line-height:1.1;
+
+background:linear-gradient(to right,#ffffff,#82d8ff);
+
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+
+margin-bottom:20px;
+
+}
+
+h2{
+
+font-size:22px;
+font-weight:400;
+color:#d9edf7;
+
+margin-bottom:35px;
+
+}
+
+.line{
+
+width:120px;
+height:4px;
+
+background:linear-gradient(90deg,#00d4ff,#0066ff);
+
+margin:auto;
+
+border-radius:20px;
+
+margin-bottom:40px;
+
+}
+
+p{
+
+font-size:17px;
+line-height:1.8;
+color:#d5e5f0;
+max-width:620px;
+margin:auto;
+
+}
+
+.status{
+
+margin-top:45px;
+
+display:inline-flex;
+align-items:center;
+
+padding:14px 28px;
+
+background:rgba(0,255,170,.12);
+
+border:1px solid rgba(0,255,170,.3);
+
+border-radius:40px;
+
+font-weight:600;
+
+color:#9effdc;
+
+}
+
+.dot{
+
+width:12px;
+height:12px;
+border-radius:50%;
+
+background:#00ff95;
+
+margin-right:12px;
+
+animation:pulse 1.8s infinite;
+
+}
+
+@keyframes pulse{
+
+0%{
+box-shadow:0 0 0 0 rgba(0,255,149,.7);
+}
+
+70%{
+box-shadow:0 0 0 18px rgba(0,255,149,0);
+}
+
+100%{
+box-shadow:0 0 0 0 rgba(0,255,149,0);
+}
+
+}
+
+.footer{
+
+margin-top:55px;
+font-size:14px;
+color:#8fa9c0;
+
+}
+
+.footer strong{
+
+color:white;
+
+}
+
+@media(max-width:768px){
+
+.container{
+
+padding:40px 25px;
+
+}
+
+h1{
+
+font-size:40px;
+
+}
+
+h2{
+
+font-size:18px;
+
+}
+
+.logo{
+
+width:75px;
+height:75px;
+font-size:32px;
+
+}
+
+}
+
+</style>
+
 </head>
 <body>
 
-  <!-- LOADER -->
-  <div id="loader">
-    <div class="loader-inner">
-      <div class="loader-logo"></div>
-      <div class="loader-text">SABB &nbsp;•&nbsp; SECURING FUTURES</div>
-    </div>
-  </div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
 
-  <!-- CURSOR GLOW -->
-  <div id="cursor-glow"></div>
+<div class="container">
 
-  <!-- NAV -->
-  <header class="nav">
-    <div class="container nav-inner">
-      <a href="#home" class="brand">
-        
-          <img src="sabb without slogan.png" alt="SABB Insurance Brokers Limited"/>
-        
-      </a>
-      <nav class="nav-links">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#compliance">Compliance</a>
-        <a href="#claims">Claims</a>
-        <a href="#contact">Contact</a>
-      </nav>
-      <a href="quote.html" class="nav-quote-btn">Get a Free Quote</a>
-      <button class="menu-btn" aria-label="Open menu">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round"/></svg>
-      </button>
-    </div>
-    
-  </header>
+<div class="logo">🛡️</div>
 
-  <!-- HERO -->
-  <section id="home" class="hero">
-    <div id="particles"></div>
-    <div class="container hero-grid">
-      <div class="hero-copy reveal">
-        <span class="eyebrow"><span class="dot"></span> Licensed Insurance Brokerage</span>
-        <h1>Your Trusted <span class="accent">Insurance Brokerage</span> Partner</h1>
-        <p class="lead">We provide tailored insurance solutions that protect businesses, families and investments — with clarity, integrity and confidence.</p>
-        <div class="hero-actions">
-          <a href="#contact" class="btn btn-primary">
-            Get a Quote
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
-          <a href="#contact" class="btn btn-ghost">Contact Us</a>
-        </div>
-        <div class="hero-stats">
-          <div class="hero-stat"><div class="n">5+</div><div class="l">Years Experience</div></div>
-          <div class="hero-stat"><div class="n">30+</div><div class="l">Underwriters</div></div>
-          <div class="hero-stat"><div class="n">98%</div><div class="l">Claims Success</div></div>
-        </div>
-      </div>
-
-      <div class="hero-visual reveal">
-        <span class="float-dot fd-1"></span>
-        <span class="float-dot fd-2"></span>
-        <span class="float-dot fd-3"></span>
-
-        <div class="shield">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
-            <path d="M12 2l8 3v7c0 5-3.5 9-8 10-4.5-1-8-5-8-10V5l8-3z" stroke-linejoin="round"/>
-            <path d="M9 12l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </div>
-
-        <div class="float-card fc-1">
-          <div class="ic">
-            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <div><strong>Policy Approved</strong><span>Coverage active</span></div>
-        </div>
-
-        <div class="float-card fc-2">
-          <div class="ic">
-            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2" stroke-linecap="round"/></svg>
-          </div>
-          <div><strong>Claim Settled</strong><span>In 48 hours</span></div>
-        </div>
-
-        <div class="float-card fc-3">
-          <div class="ic">
-            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z" stroke-linejoin="round"/></svg>
-          </div>
-          <div><strong>5.0 Rating</strong><span>From 200+ clients</span></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section id="about">
-    <div class="container">
-      <div class="section-head reveal">
-        <span class="eyebrow">About SABB</span>
-        <h2>A brokerage built on trust, expertise and care.</h2>
-        <p>We are an independent insurance brokerage that bridges clients with the most suitable underwriters — translating complex insurance language into clear, actionable protection plans.</p>
-      </div>
-
-      <div class="about-grid">
-        <div class="reveal">
-          <h2>Who we are</h2>
-          <p>SABB Insurance Brokers Limited is a fully licensed insurance intermediary committed to safeguarding what matters most to individuals, families and corporate clients. We combine deep industry expertise with a personalised, advisory-led approach so every policy aligns precisely with your goals and risk profile.</p>
-          <p>Through long-standing partnerships with leading underwriters, we negotiate competitive premiums, structure comprehensive cover and stand by your side throughout the entire policy lifecycle — from quotation to claim.</p>
-
-          <div class="mvv">
-            <div class="mvv-card">
-              <div class="ic"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg></div>
-              <h4>Mission</h4>
-              <p>Deliver dependable, transparent insurance solutions that secure futures.</p>
-            </div>
-            <div class="mvv-card">
-              <div class="ic"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></div>
-              <h4>Vision</h4>
-              <p>To be the most trusted insurance brokerage partner in the region.</p>
-            </div>
-            <div class="mvv-card">
-              <div class="ic"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l8 3v7c0 5-3.5 9-8 10-4.5-1-8-5-8-10V5l8-3z"/></svg></div>
-              <h4>Integrity</h4>
-              <p>Honesty, transparency and ethics at the core of every decision.</p>
-            </div>
-            <div class="mvv-card">
-              <div class="ic"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
-              <h4>Client First</h4>
-              <p>Every recommendation is tailored to the unique needs of the client.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="about-visual reveal">
-          <h3>What sets us apart</h3>
-          <p style="color: rgba(255,255,255,.78); position: relative;">A modern brokerage experience grounded in old-fashioned trust.</p>
-          <ul>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Independent, unbiased advisory</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Access to 30+ underwriting partners</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Dedicated relationship managers</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Hands-on claims assistance</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Full regulatory compliance</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Transparent pricing, no hidden fees</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!--
-
-  <section id="leadership" class="leadership-section">
-  <div class="container">
-    <div class="section-head reveal">
-      <span class="eyebrow">Leadership</span>
-      <h2>Led by people who understand protection, trust and service.</h2>
-      <p>Meet the leadership team guiding SABB Insurance Brokers Limited with experience, care and professional discipline.</p>
-    </div>
-
-    <div class="leadership-slider reveal" aria-label="Leadership profiles">
-      <article class="leader-card active">
-        <div class="leader-photo-frame">
-          <img src="img 1.jpg" alt="Sabir X">
-        </div>
-        <div class="leader-info">
-          <span>Chief Executive Officer</span>
-          <h3>Sabir X</h3>
-          <p>Provides strategic leadership, client relationship direction and market oversight for SABB Insurance Brokers Limited.</p>
-          <div class="leader-signature">Strategic Growth · Client Trust · Governance</div>
-        </div>
-      </article>
-
-      <article class="leader-card">
-        <div class="leader-photo-frame">
-          <img src="img 2.jpg" alt="Director Name">
-        </div>
-        <div class="leader-info">
-          <span>Director</span>
-          <h3>Director Name</h3>
-          <p>Supports business development, operational discipline and long-term partner relationships across insurance lines.</p>
-          <div class="leader-signature">Operations · Partnerships · Advisory</div>
-        </div>
-      </article>
-
-      <article class="leader-card">
-        <div class="leader-photo-frame">
-          <img src="img 3.jpg" alt="CFO Name">
-        </div>
-        <div class="leader-info">
-          <span>Chief Financial Officer</span>
-          <h3>CFO Name</h3>
-          <p>Guides compliance, risk awareness and client-first service standards across the brokerage.</p>
-          <div class="leader-signature">Compliance · Risk · Service Quality</div>
-        </div>
-      </article>
-    </div>
-
-    <div class="leader-controls reveal">
-      <button type="button" class="leader-arrow" id="leaderPrev" aria-label="Previous leader">‹</button>
-      <div class="leader-dots" id="leaderDots"></div>
-      <button type="button" class="leader-arrow" id="leaderNext" aria-label="Next leader">›</button>
-    </div>
-  </div>
-</section>
-
--->
-
-  <!-- WHY -->
-  <section id="why">
-    <div class="container">
-      <div class="section-head reveal">
-        <span class="eyebrow">Why SABB</span>
-        <h2>Six reasons clients choose us — and stay.</h2>
-        <p>Every promise we make is backed by certified expertise, established underwriting partners and a culture obsessed with client outcomes.</p>
-      </div>
-
-      <div class="why-grid">
-        <div class="why-card reveal">
-          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11l9-8 9 8v10H3V11z"/><path d="M9 21V12h6v9"/></svg></div>
-          <h3>Independent Advice</h3>
-          <p>No tie-ins. We compare the entire market to recommend cover that truly fits.</p>
-        </div>
-        <div class="why-card reveal">
-          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 010 20M12 2a15 15 0 000 20"/></svg></div>
-          <h3>Wide Insurance Network</h3>
-          <p>Partnerships with top-tier underwriters across general, life and medical lines.</p>
-        </div>
-        <div class="why-card reveal">
-          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg></div>
-          <h3>Claims Assistance</h3>
-          <p>From notification to settlement, our team manages the process end-to-end.</p>
-        </div>
-        <div class="why-card reveal">
-          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l8 3v7c0 5-3.5 9-8 10-4.5-1-8-5-8-10V5l8-3z"/><path d="M9 12l2 2 4-4"/></svg></div>
-          <h3>Regulatory Compliance</h3>
-          <p>Fully licensed and operating to the highest professional standards.</p>
-        </div>
-        <div class="why-card reveal">
-          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
-          <h3>Fast Response</h3>
-          <p>Quotes within 24 hours and rapid turnaround on queries and renewals.</p>
-        </div>
-        <div class="why-card reveal">
-          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div>
-          <h3>Personalised Solutions</h3>
-          <p>Tailored cover designed around your specific lifestyle or business risk.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SERVICES -->
-<section id="services">
-  <div class="container">
-    <div class="section-head reveal">
-      <span class="eyebrow">Insurance Services</span>
-      <h2>Comprehensive cover across every line that matters.</h2>
-      <p>From personal protection to enterprise-grade asset and liability cover — explore the policies we structure and place every day.</p>
-    </div>
-
-    <div class="services-grid">
-      <div class="svc-card reveal">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/></svg></div>
-        <h3>General Insurance</h3>
-        <p>Comprehensive everyday protection across property, mobility and liability.</p>
-        <a href="services.html#general-insurance" class="btn-link">Learn More</a>
-      </div>
-
-      <div class="svc-card reveal">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 17h14M5 17a2 2 0 11-4 0M19 17a2 2 0 104 0M3 13l2-6h14l2 6"/></svg></div>
-        <h3>Motor Insurance</h3>
-        <p>Third-party, comprehensive and commercial vehicle cover with quick claims.</p>
-        <a href="services.html#motor-insurance" class="btn-link">Learn More</a>
-      </div>
-
-      <div class="svc-card reveal">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2s4 4 4 8a4 4 0 11-8 0c0-2 1-3 2-5 .5 1 1 2 2 2 0-2-1-3 0-5z"/></svg></div>
-        <h3>Fire Insurance</h3>
-        <p>Protect buildings, stock and equipment against fire, lightning and explosion.</p>
-        <a href="services.html#fire-insurance" class="btn-link">Learn More</a>
-      </div>
-
-      <div class="svc-card reveal">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg></div>
-        <h3>Burglary Insurance</h3>
-        <p>Cover against theft, forcible entry and damage to insured property.</p>
-        <a href="services.html#burglary-insurance" class="btn-link">Learn More</a>
-      </div>
-
-      <div class="svc-card reveal">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 11-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 11-2.83-2.83l.06-.06A1.65 1.65 0 004.6 15a1.65 1.65 0 00-1.51-1H3a2 2 0 110-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 112.83-2.83l.06.06A1.65 1.65 0 009 4.6a1.65 1.65 0 001-1.51V3a2 2 0 114 0v.09A1.65 1.65 0 0015 4.6a1.65 1.65 0 001.82-.33l.06-.06a2 2 0 112.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 110 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg></div>
-        <h3>Engineering Insurance</h3>
-        <p>Contractor all-risks, plant, machinery breakdown and erection cover.</p>
-        <a href="services.html#engineering-insurance" class="btn-link">Learn More</a>
-      </div>
-
-      <div class="svc-card reveal">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s2-4 10-4 10 4 10 4-2 4-10 4-10-4-10-4z"/><path d="M2 12c0 4 4 8 10 8s10-4 10-8"/></svg></div>
-        <h3>Marine Insurance</h3>
-        <p>Goods-in-transit, cargo and hull cover for sea, air and land shipments.</p>
-        <a href="services.html#marine-insurance" class="btn-link">Learn More</a>
-      </div>
-
-      <div class="svc-card reveal">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 000-7.78z"/></svg></div>
-        <h3>Medical Insurance</h3>
-        <p>Inpatient, outpatient, maternity, dental and optical care benefits.</p>
-        <a href="services.html#medical-insurance" class="btn-link">Learn More</a>
-      </div>
-
-      <div class="svc-card reveal">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="7" r="4"/><path d="M4 21a8 8 0 0116 0"/></svg></div>
-        <h3>Individual Medical</h3>
-        <p>Personal health cover scaled to your lifestyle and chosen hospital tier.</p>
-        <a href="services.html#individual-medical" class="btn-link">Learn More</a>
-      </div>
-
-      <div class="svc-card reveal">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-3-3.87M9 21v-2a4 4 0 013-3.87"/><circle cx="9" cy="7" r="3"/><circle cx="17" cy="7" r="3"/></svg></div>
-        <h3>Family Medical Cover</h3>
-        <p>One policy covering spouse and children with maternity benefits.</p>
-        <a href="services.html#family-medical-cover" class="btn-link">Learn More</a>
-      </div>
-
-      <div class="svc-card reveal">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M16 3H8v4M3 13h18"/></svg></div>
-        <h3>Corporate Medical</h3>
-        <p>Group health schemes that attract and retain top talent.</p>
-        <a href="services.html#corporate-medical" class="btn-link">Learn More</a>
-      </div>
-
-      <div class="svc-card reveal">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
-        <h3>Life Insurance</h3>
-        <p>Income protection and dependants' security with flexible premiums.</p>
-        <a href="services.html#life-insurance" class="btn-link">Learn More</a>
-      </div>
-
-      <div class="svc-card reveal">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 000-7.78z"/></svg></div>
-        <h3>Life Assurance</h3>
-        <p>Whole-of-life cover combining protection with long-term savings.</p>
-        <a href="services.html#life-assurance" class="btn-link">Learn More</a>
-      </div>
-
-      <div class="svc-card reveal">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></svg></div>
-        <h3>Education Plans</h3>
-        <p>Structured savings policies that secure your child's academic journey.</p>
-        <a href="services.html#education-plans" class="btn-link">Learn More</a>
-      </div>
-
-      <div class="svc-card reveal">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
-        <h3>Retirement Plans</h3>
-        <p>Pension and annuity products to fund the lifestyle you've earned.</p>
-        <a href="services.html#retirement-plans" class="btn-link">Learn More</a>
-      </div>
-
-      <div class="svc-card reveal">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V7l8-4 8 4v14M9 21v-6h6v6"/></svg></div>
-        <h3>Business Insurance</h3>
-        <p>End-to-end SME and corporate risk packages, including BI cover.</p>
-        <a href="services.html#business-insurance" class="btn-link">Learn More</a>
-      </div>
-
-      <div class="svc-card reveal">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6v6H9z"/></svg></div>
-        <h3>Asset Protection</h3>
-        <p>Cover for plant, electronics, machinery and high-value items.</p>
-        <a href="services.html#asset-protection" class="btn-link">Learn More</a>
-      </div>
-
-      <div class="svc-card reveal">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-        <h3>Liability Insurance</h3>
-        <p>Public, product and professional indemnity cover for peace of mind.</p>
-        <a href="services.html#liability-insurance" class="btn-link">Learn More</a>
-      </div>
-
-      <div class="svc-card reveal">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
-        <h3>Employee Benefits</h3>
-        <p>Group life, WIBA, pension and health solutions for your workforce.</p>
-        <a href="services.html#employee-benefits" class="btn-link">Learn More</a>
-      </div>
-
-      <div class="svc-card reveal">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 16l20-8-8 20-4-8-8-4z"/><path d="M10 20l4-4"/></svg></div>
-        <h3>Aviation Insurance</h3>
-        <p>Specialized protection for aircraft, aviation operations and related liabilities.</p>
-        <a href="services.html#aviation-insurance" class="btn-link">Learn More</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-  <!-- COMPLIANCE -->
-  <section id="compliance">
-    <div class="container">
-      <div class="section-head reveal">
-        <span class="eyebrow">Compliance & Governance</span>
-        <h2>Built on principles. Bound by regulation.</h2>
-        <p>Our compliance framework guides every interaction — protecting clients, partners and the integrity of the markets we operate in.</p>
-      </div>
-
-      <div class="timeline">
-        <div class="tl-item reveal">
-          <div class="tl-card"><h3>Ethical Business Practices</h3><p>We operate to a strict code of conduct rooted in honesty, fairness and accountability.</p></div>
-          <div class="dot"></div>
-          <div class="tl-card"></div>
-        </div>
-        <div class="tl-item reveal">
-          <div class="tl-card"></div>
-          <div class="dot"></div>
-          <div class="tl-card"><h3>Transparency</h3><p>Clear documentation, full disclosure of fees and honest policy explanations — always.</p></div>
-        </div>
-        <div class="tl-item reveal">
-          <div class="tl-card"><h3>Regulatory Compliance</h3><p>Fully licensed and operating in line with all statutory and industry regulations.</p></div>
-          <div class="dot"></div>
-          <div class="tl-card"></div>
-        </div>
-        <div class="tl-item reveal">
-          <div class="tl-card"></div>
-          <div class="dot"></div>
-          <div class="tl-card"><h3>Customer Protection</h3><p>Robust data privacy, secure record-keeping and fiduciary duty in every transaction.</p></div>
-        </div>
-        <div class="tl-item reveal">
-          <div class="tl-card"><h3>Risk Management</h3><p>Proactive identification, assessment and mitigation of risk across portfolios.</p></div>
-          <div class="dot"></div>
-          <div class="tl-card"></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CLAIMS -->
-  <section id="claims">
-    <div class="container">
-      <div class="section-head reveal">
-        <span class="eyebrow">Claims Support</span>
-        <h2>A claims process designed to feel effortless.</h2>
-        <p>When you need to claim, our team becomes your advocate — guiding every step with clarity and urgency.</p>
-      </div>
-
-      <div class="steps">
-        <div class="step reveal"><div class="num">01</div><h3>Report Claim</h3><p>Notify us by phone or email and we'll open your case within minutes.</p></div>
-        <div class="step reveal"><div class="num">02</div><h3>Documentation</h3><p>We help you compile all required paperwork accurately and quickly.</p></div>
-        <div class="step reveal"><div class="num">03</div><h3>Assessment</h3><p>We liaise with the underwriter and assessors to drive prompt evaluation.</p></div>
-        <div class="step reveal"><div class="num">04</div><h3>Settlement</h3><p>We follow through to ensure fair, timely settlement of your claim.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- STATS -->
-  <section id="stats">
-    <div class="container">
-      <div class="stats-grid">
-        <div class="stat reveal"><div class="num" data-count="2500">0</div><div class="l">Clients Served</div></div>
-        <div class="stat reveal"><div class="num" data-count="5800">0</div><div class="l">Policies Managed</div></div>
-        <div class="stat reveal"><div class="num" data-count="1200">0</div><div class="l">Claims Assisted</div></div>
-        <div class="stat reveal"><div class="num" data-count="5">0</div><div class="l">Years of Excellence</div></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- TESTIMONIALS -->
-  <section id="testimonials">
-    <div class="container">
-      <div class="section-head reveal">
-        <span class="eyebrow">Client Voices</span>
-        <h2>Trusted by individuals and enterprises alike.</h2>
-      </div>
-
-      <div class="t-wrap reveal">
-        <div class="t-track">
-          <div class="t-slide"><div class="t-card">
-            <div class="stars">★★★★★</div>
-            <p class="quote">"SABB took our corporate medical scheme from confusing to seamless. Their team responds in minutes, not days — a genuine partner."</p>
-            <div class="who"><strong>Brian K.</strong><span>HR Director, Logistics Group</span></div>
-          </div></div>
-          <div class="t-slide"><div class="t-card">
-            <div class="stars">★★★★★</div>
-            <p class="quote">"Filing my motor claim with SABB took the stress out of a bad day. They handled everything and the payout came through faster than I expected."</p>
-            <div class="who"><strong>Mary W.</strong><span>Private Client</span></div>
-          </div></div>
-          <div class="t-slide"><div class="t-card">
-            <div class="stars">★★★★★</div>
-            <p class="quote">"What I value most is their honesty. They recommended a policy that was actually cheaper than what I had — and better. That earned my loyalty."</p>
-            <div class="who"><strong>David O.</strong><span>SME Owner</span></div>
-          </div></div>
-        </div>
-        <div class="t-dots"></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section id="faq">
-    <div class="container">
-      <div class="section-head reveal">
-        <span class="eyebrow">Questions</span>
-        <h2>Frequently asked questions.</h2>
-      </div>
-      <div class="faq-list">
-        <div class="faq-item reveal">
-          <button class="faq-q">What does an insurance broker actually do?<span class="pm">+</span></button>
-          <div class="faq-a"><p>We act on your behalf — assessing your risks, sourcing competitive quotes from multiple underwriters, recommending the best fit and supporting you through claims.</p></div>
-        </div>
-        <div class="faq-item reveal">
-          <button class="faq-q">How quickly can I get a quote?<span class="pm">+</span></button>
-          <div class="faq-a"><p>Most quotes are issued within 24 hours. Complex commercial cases may take 2–3 working days as we gather underwriter responses.</p></div>
-        </div>
-        <div class="faq-item reveal">
-          <button class="faq-q">Do I pay extra for using a broker?<span class="pm">+</span></button>
-          <div class="faq-a"><p>No. Our brokerage services come at no additional cost to you — we are compensated by the underwriter once a policy is placed.</p></div>
-        </div>
-        <div class="faq-item reveal">
-          <button class="faq-q">Can SABB help if my claim is disputed?<span class="pm">+</span></button>
-          <div class="faq-a"><p>Yes. We advocate on your behalf, presenting evidence and engaging the underwriter to ensure a fair and timely resolution.</p></div>
-        </div>
-        <div class="faq-item reveal">
-          <button class="faq-q">Is my personal information safe?<span class="pm">+</span></button>
-          <div class="faq-a"><p>Absolutely. We follow strict data protection protocols and only share information with the underwriters required to issue or service your policy.</p></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact">
-    <div class="container">
-      <div class="section-head reveal">
-        <span class="eyebrow">Contact</span>
-        <h2>Let's secure your future — together.</h2>
-        <p>Tell us a little about what you'd like to protect and we'll get back to you with a tailored solution.</p>
-      </div>
-
-      <div class="contact-grid">
-        <div class="contact-info reveal">
-          <h3>Talk to an advisor</h3>
-          <p>Our team is ready to help with quotes, advice or claim support.</p>
-          <ul class="ci-list">
-            <li>
-              <div class="ic"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12a2 2 0 01-2 2H4a2 2 0 01-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg></div>
-              <div><strong>Email</strong><br><a href="mailto:info@sabbinsurance.com">info@sabbinsurance.com</a></div>
-            </li>
-            <li>
-              <div class="ic"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.37 1.9.72 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0122 16.92z"/></svg></div>
-              <div><strong>Phone</strong><br><a href="tel:+254725474914">+254 725 474 914</a></div>
-            </li>
-            <li>
-              <div class="ic"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
-              <div><strong>Office</strong><br><span>MJ1 BUSINESS PARK – Nairobi, Kenya</span></div>
-            </li>
-            <li>
-              <div class="ic"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
-              <div>
-                <strong>Hours</strong><br><span>Mon – Fri · 8:30am – 5:00pm</span>
-                <br><span>Sat –      8:30am – 1:00pm</span>
-              </div>
-            </li>
-          </ul>
-          <div class="socials">
-            <a href="https://web.facebook.com/profile.php?id=61591936155189" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 10-11.6 9.9v-7H8v-3h2.4V9.5c0-2.4 1.4-3.7 3.6-3.7 1 0 2.1.2 2.1.2v2.3h-1.2c-1.2 0-1.5.7-1.5 1.5V12H16l-.4 3h-2.2v7A10 10 0 0022 12z"/></svg></a>
-            <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5A2.5 2.5 0 112.5 6 2.5 2.5 0 014.98 3.5zM3 8.98h4v12H3zM10 8.98h3.8v1.64h.06a4.17 4.17 0 013.75-2.06c4 0 4.74 2.64 4.74 6.07v6.35h-4v-5.63c0-1.34 0-3.07-1.87-3.07s-2.16 1.46-2.16 2.97v5.73h-4z"/></svg></a>
-<a href="#" aria-label="X">
-  <svg viewBox="0 0 24 24" fill="currentColor">
-    <path d="M18.244 2H21.5l-7.11 8.13L22.75 22h-6.54l-5.12-6.69L5.23 22H1.97l7.6-8.69L1.55 2h6.7l4.63 6.12L18.244 2zm-1.14 17.9h1.8L7.27 3.99H5.34L17.104 19.9z"/>
-  </svg>
-</a>            <a href="https://www.instagram.com/sabb.insurance/" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
-          </div>
-        </div>
-
-        <div class="reveal">
-  <form class="contact-form" id="quoteForm">
-    <h3>Request a quote</h3>
-    <p>We'll reply within one business day.</p>
-    <div class="form-row">
-      <div class="field">
-        <label>Full Name</label>
-        <input type="text" id="clientName" required placeholder="Jane Doe" />
-      </div>
-      <div class="field">
-        <label>Phone</label>
-        <input type="tel" id="clientPhone" required placeholder="+254 7XX XXX XXX" />
-      </div>
-    </div>
-    <div class="field">
-      <label>Email</label>
-      <input type="email" id="clientEmail" required placeholder="you@example.com" />
-    </div>
-    <div class="field">
-      <label>Insurance Interest</label>
-      <select id="insuranceType">
-        <option>Motor Insurance</option>
-        <option>Medical Insurance</option>
-        <option>Life Insurance</option>
-        <option>Business Insurance</option>
-        <option>Other</option>
-      </select>
-    </div>
-    <div class="field">
-      <label>Estimated Coverage Limit</label>
-      <input type="text" id="coverageLimit" placeholder="e.g. KSh 5,000,000" />
-    </div>
-    <div class="field">
-      <label>Message</label>
-      <textarea id="clientMessage" placeholder="Tell us what you'd like to protect..."></textarea>
-    </div>
-    <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center;">Send Message</button>
-  </form>
-  <div class="map-box">
-  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4037.5190227155063!2d36.80598211036024!3d-1.2691761290238786!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f17395dd773ef%3A0x91d9089496a5a961!2sMj1%20Business%20Park!5e0!3m2!1sen!2ske!4v1782492919110!5m2!1sen!2ske" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
-
-  <div class="map-pin-overlay">
-    <div class="map-pin"></div>
-  </div>
-  
-  <div class="office-suite-badge">
-    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-right:4px; vertical-align:middle;">
-      <path d="M3 21h18M3 7V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v2M5 21V7a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v14" stroke-linecap="round"/>
-    </svg>
-    10th Floor, Suite No. 1006
-  </div>
+<div class="small">
+Welcome
 </div>
+
+<h1>SABB</h1>
+
+<h2>Insurance Brokers Limited</h2>
+
+<div class="line"></div>
+
+<p>
+Our digital experience is currently being refined to deliver a faster,
+more secure, and world-class insurance platform. Soon you'll be able to
+explore comprehensive insurance solutions, request quotations, and
+connect with our expert advisors through an elegant online experience.
+</p>
+
+<div class="status">
+<div class="dot"></div>
+Website Launching Soon
 </div>
-      </div>
-    </div>
-  </section>
 
-  <a href="quote.html" class="mobile-quote-btn">
-    Get Quote
-</a>
+<div class="footer">
 
-  <!-- FOOTER -->
-  <footer>
-    <div class="container">
-      <div class="foot-grid">
-        <div class="foot-brand">
-          <img src="sabb logo.png" alt="SABB Insurance Brokers Limited" />
-          <p>SABB Insurance Brokers Limited — securing the futures of individuals, families and businesses through trusted, independent insurance advisory.</p>
-        </div>
-        <div class="foot-col">
-          <h4>Quick Links</h4>
-          <ul>
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#why">Why Choose Us</a></li>
-            <li><a href="#compliance">Compliance</a></li>
-            <li><a href="#claims">Claims Support</a></li>
-            <li><a href="#faq">FAQ</a></li>
-          </ul>
-        </div>
-        <div class="foot-col">
-          <h4>Services</h4>
-          <ul>
-            <li><a href="#services">Motor Insurance</a></li>
-            <li><a href="#services">Medical Cover</a></li>
-            <li><a href="#services">Life Assurance</a></li>
-            <li><a href="#services">Business Insurance</a></li>
-            <li><a href="#services">Marine & Fire</a></li>
-          </ul>
-        </div>
-        <div class="foot-col">
-          <h4>Contact</h4>
-          <ul>
-            <li><a href="mailto:sabbinsurancebrokerslimited@gmail.com">info@sabbinsurance.com</a></li>
-            <li><a href="tel:+254725474914">+254 725 474 914</a></li>
-            <li>MJ1 BUSINESS PARK – Nairobi, Kenya</li>
-            <li>Mon – Fri · 8:30am – 5:00pm</li>
-            <li>Sat –      8:30am – 1:00pm</li>
-          </ul>
-        </div>
-      </div>
-      <div class="foot-bottom">
-        <div>© <span id="year"></span> SABB Insurance Brokers Limited. All rights reserved.</div>
-        <div class="tag">Securing Futures Together</div>
-      </div>
-    </div>
-  </footer>
+© 2026 <strong>SABB Insurance Brokers Limited</strong><br><br>
 
-  <!-- Back to top -->
-  <button id="toTop" aria-label="Back to top">
-    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 19V5M5 12l7-7 7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-  </button>
-  
-  <script src="script.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-<script type="module" src="quote-submissions.js?v=2"></script>
+Protecting What Matters Most.
+
+</div>
+
+</div>
+
 </body>
 </html>
