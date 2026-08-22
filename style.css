@@ -964,70 +964,96 @@ footer::before {
 
 }
 
+
+
+
 /* =========================================================
-   LEADERSHIP SECTION
+   SABB INSURANCE
+   SINGLE LEADERSHIP BOARD
    ========================================================= */
 
 .leadership-section {
   position: relative;
-  padding: 110px 0 90px;
+
+  padding: 110px 0 100px;
+
   background:
     radial-gradient(
-      circle at 8% 15%,
+      circle at 8% 12%,
       rgba(200, 155, 60, 0.10),
       transparent 30%
     ),
     radial-gradient(
-      circle at 92% 85%,
+      circle at 92% 88%,
       rgba(10, 46, 109, 0.05),
       transparent 30%
     ),
     linear-gradient(
       180deg,
       #ffffff 0%,
-      #f8fafc 100%
+      #f7f9fc 100%
     );
+
   overflow: hidden;
 }
 
 
-/* ---------------------------------------------------------
+/* =========================================================
    SECTION HEADING
-   --------------------------------------------------------- */
+   ========================================================= */
 
 .leadership-heading {
   max-width: 760px;
+
   margin: 0 auto 55px;
+
   text-align: center;
 }
 
 .leadership-heading .eyebrow {
   display: inline-flex;
+
   align-items: center;
+
   gap: 10px;
+
   margin-bottom: 16px;
+
   color: var(--gold);
-  font-size: 0.78rem;
+
+  font-size: 0.76rem;
+
   font-weight: 800;
+
   text-transform: uppercase;
+
   letter-spacing: 0.16em;
 }
 
 .leadership-heading .eyebrow::before,
 .leadership-heading .eyebrow::after {
   content: "";
+
   width: 28px;
+
   height: 1px;
+
   background: var(--gold);
+
   opacity: 0.65;
 }
 
 .leadership-heading h2 {
   margin: 0 0 18px;
+
   color: var(--navy);
-  font-size: clamp(2.2rem, 4vw, 3.8rem);
+
+  font-size: clamp(2.3rem, 4vw, 3.8rem);
+
   line-height: 1.08;
-  letter-spacing: -0.035em;
+
+  letter-spacing: -0.04em;
+
   font-weight: 800;
 }
 
@@ -1036,130 +1062,248 @@ footer::before {
 }
 
 .leadership-heading p {
-  max-width: 650px;
+  max-width: 670px;
+
   margin: 0 auto;
+
   color: var(--muted);
+
   font-size: 1rem;
+
   line-height: 1.8;
 }
 
 
-/* ---------------------------------------------------------
-   SLIDER
-   --------------------------------------------------------- */
+/* =========================================================
+   MAIN SINGLE CARD
+   ========================================================= */
 
-.leadership-slider {
-  display: flex;
-  gap: 28px;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-  padding: 10px 4px 30px;
-  scrollbar-width: none;
-}
-
-.leadership-slider::-webkit-scrollbar {
-  display: none;
-}
-
-
-/* ---------------------------------------------------------
-   LEADER CARD
-   --------------------------------------------------------- */
-
-.leader-card {
+.leadership-board {
   position: relative;
 
-  flex: 0 0 100%;
-  scroll-snap-align: center;
+  width: 100%;
 
-  display: grid;
-  grid-template-columns: minmax(300px, 380px) 1fr;
+  border:
+    1px solid
+    rgba(10, 46, 109, 0.10);
 
-  gap: 60px;
-  align-items: center;
+  border-radius: 30px;
 
-  padding: 42px;
-
-  border: 1px solid rgba(10, 46, 109, 0.09);
-  border-radius: 28px;
-
-  background: rgba(255, 255, 255, 0.96);
+  background:
+    rgba(255, 255, 255, 0.97);
 
   box-shadow:
-    0 10px 30px rgba(6, 29, 71, 0.05),
-    0 30px 80px rgba(6, 29, 71, 0.08);
+    0 15px 40px
+    rgba(6, 29, 71, 0.06),
+    0 35px 90px
+    rgba(6, 29, 71, 0.09);
 
   overflow: hidden;
 }
 
 
-/* subtle gold line on card */
+/* Top gold line */
 
-.leader-card::before {
+.leadership-board::before {
   content: "";
+
   position: absolute;
+
   top: 0;
   left: 0;
+
   width: 100%;
+
   height: 3px;
 
-  background: linear-gradient(
-    90deg,
-    transparent,
-    var(--gold),
-    transparent
-  );
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      var(--gold),
+      transparent
+    );
 }
 
 
-/* ---------------------------------------------------------
-   PHOTO
-   --------------------------------------------------------- */
+/* =========================================================
+   CARD HEADER
+   ========================================================= */
 
-.leader-photo-column {
+.leadership-board-header {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: 30px 35px;
+
+  border-bottom:
+    1px solid
+    rgba(10, 46, 109, 0.08);
+}
+
+.board-eyebrow {
+  display: block;
+
+  margin-bottom: 6px;
+
+  color: var(--gold);
+
+  font-size: 0.65rem;
+
+  font-weight: 800;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.15em;
+}
+
+.leadership-board-header h3 {
+  margin: 0;
+
+  color: var(--navy);
+
+  font-size: 1.35rem;
+
+  font-weight: 800;
+}
+
+
+/* Leader count */
+
+.board-mark {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 8px 13px;
+
+  border:
+    1px solid
+    rgba(200, 155, 60, 0.20);
+
+  border-radius: 10px;
+
+  background:
+    rgba(200, 155, 60, 0.06);
+}
+
+.board-mark strong {
+  color: var(--gold);
+
+  font-size: 1.1rem;
+
+  font-weight: 900;
+}
+
+.board-mark span {
+  color: var(--navy);
+
+  font-size: 0.65rem;
+
+  font-weight: 700;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.08em;
+}
+
+
+/* =========================================================
+   THREE PROFILES
+   ========================================================= */
+
+.leadership-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+}
+
+
+/* =========================================================
+   PROFILE
+   ========================================================= */
+
+.executive-profile {
   position: relative;
+
+  padding: 32px 30px 38px;
+
+  border-right:
+    1px solid
+    rgba(10, 46, 109, 0.08);
 }
 
-.leader-photo-frame {
+.executive-profile:last-child {
+  border-right: 0;
+}
+
+
+/* Featured first profile */
+
+.featured-leader {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(200, 155, 60, 0.025),
+      transparent
+    );
+}
+
+
+/* =========================================================
+   PHOTO
+   ========================================================= */
+
+.executive-photo {
   position: relative;
 
   width: 100%;
-  aspect-ratio: 4 / 5;
 
-  border-radius: 22px;
+  aspect-ratio: 4 / 4.7;
+
+  margin-bottom: 25px;
+
+  border-radius: 18px;
+
   overflow: hidden;
 
   background: var(--navy);
 
   box-shadow:
-    0 20px 45px rgba(6, 29, 71, 0.18);
+    0 15px 35px
+    rgba(6, 29, 71, 0.14);
+}
+
+.executive-photo img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition:
+    transform 0.7s
+    cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.executive-profile:hover
+.executive-photo img {
+  transform: scale(1.035);
 }
 
 
-/* gold decorative frame */
+/* Image gradient */
 
-.leader-photo-frame::before {
-  content: "";
-
+.executive-photo-overlay {
   position: absolute;
-  z-index: 3;
 
-  inset: 14px;
-
-  border: 1px solid rgba(255, 255, 255, 0.32);
-  border-radius: 15px;
-
-  pointer-events: none;
-}
-
-
-/* image gradient */
-
-.leader-photo-frame::after {
-  content: "";
-
-  position: absolute;
   z-index: 2;
 
   inset: 0;
@@ -1167,205 +1311,140 @@ footer::before {
   background:
     linear-gradient(
       180deg,
-      rgba(6, 29, 71, 0) 45%,
-      rgba(6, 29, 71, 0.72) 100%
+      transparent 55%,
+      rgba(6, 29, 71, 0.55)
     );
-}
 
-.leader-photo-frame img {
-  width: 100%;
-  height: 100%;
-
-  object-fit: cover;
-
-  display: block;
-
-  transition:
-    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.leader-card:hover .leader-photo-frame img {
-  transform: scale(1.035);
+  pointer-events: none;
 }
 
 
-/* gold accent */
+/* Number */
 
-.photo-accent {
+.executive-number {
   position: absolute;
+
   z-index: 4;
 
-  width: 75px;
-  height: 75px;
+  left: 16px;
+  bottom: 16px;
 
-  top: -10px;
-  right: -10px;
+  display: grid;
 
-  border-radius: 50%;
+  place-items: center;
 
-  background: var(--gold);
+  width: 42px;
+  height: 42px;
 
-  opacity: 0.95;
-}
+  border-radius: 11px;
 
-.photo-accent::after {
-  content: "";
+  background:
+    rgba(255, 255, 255, 0.95);
 
-  position: absolute;
-
-  inset: 12px;
-
-  border: 1px solid rgba(255, 255, 255, 0.6);
-  border-radius: 50%;
-}
-
-
-/* photo label */
-
-.photo-label {
-  position: absolute;
-  z-index: 5;
-
-  left: 28px;
-  bottom: 24px;
-
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-
-  color: #fff;
-}
-
-.photo-label span {
-  font-size: 1.15rem;
-  font-weight: 800;
-  letter-spacing: 0.12em;
-}
-
-.photo-label small {
-  font-size: 0.68rem;
-  text-transform: uppercase;
-  letter-spacing: 0.18em;
-  opacity: 0.72;
-}
-
-
-/* ---------------------------------------------------------
-   LEADER INFORMATION
-   --------------------------------------------------------- */
-
-.leader-info {
-  padding: 10px 15px 10px 0;
-}
-
-.leader-role {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-
-  margin-bottom: 16px;
-
-  color: var(--gold);
-
-  font-size: 0.76rem;
-  font-weight: 800;
-
-  text-transform: uppercase;
-  letter-spacing: 0.13em;
-}
-
-.role-line {
-  width: 34px;
-  height: 2px;
-
-  background: var(--gold);
-
-  flex-shrink: 0;
-}
-
-
-.leader-info h3 {
-  margin: 0 0 20px;
-
-  color: var(--navy);
-
-  font-size: clamp(2.2rem, 4vw, 4rem);
-
-  line-height: 1;
-
-  letter-spacing: -0.04em;
-
-  font-weight: 800;
-}
-
-
-.leader-description {
-  max-width: 680px;
-
-  margin: 0 0 30px;
-
-  color: var(--muted);
-
-  font-size: 1.02rem;
-
-  line-height: 1.85;
-}
-
-
-/* ---------------------------------------------------------
-   VALUES
-   --------------------------------------------------------- */
-
-.leader-values {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-
-  margin-bottom: 30px;
-}
-
-.leader-value {
-  min-width: 145px;
-
-  display: flex;
-  align-items: center;
-  gap: 12px;
-
-  padding: 12px 16px;
-
-  border: 1px solid rgba(10, 46, 109, 0.08);
-
-  border-radius: 12px;
-
-  background: #f8fafc;
-}
-
-.leader-value strong {
   color: var(--gold);
 
   font-size: 0.72rem;
 
+  font-weight: 900;
+
+  box-shadow:
+    0 8px 20px
+    rgba(6, 29, 71, 0.15);
+}
+
+
+/* =========================================================
+   PROFILE CONTENT
+   ========================================================= */
+
+.executive-content {
+  text-align: left;
+}
+
+
+/* Role */
+
+.executive-role {
+  display: block;
+
+  min-height: 32px;
+
+  margin-bottom: 9px;
+
+  color: var(--gold);
+
+  font-size: 0.68rem;
+
+  font-weight: 800;
+
+  line-height: 1.45;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.10em;
+}
+
+
+/* Name */
+
+.executive-content h4 {
+  margin: 0 0 14px;
+
+  color: var(--navy);
+
+  font-size: 1.55rem;
+
+  line-height: 1.1;
+
+  letter-spacing: -0.025em;
+
   font-weight: 800;
 }
 
-.leader-value span {
-  color: var(--navy);
+
+/* Bio */
+
+.executive-content > p {
+  min-height: 118px;
+
+  margin: 0 0 25px;
+
+  color: var(--muted);
 
   font-size: 0.82rem;
 
-  font-weight: 700;
+  line-height: 1.75;
 }
 
 
-/* ---------------------------------------------------------
-   DIVIDER
-   --------------------------------------------------------- */
+/* =========================================================
+   EXPERTISE HEADING
+   ========================================================= */
 
-.leader-divider {
-  width: 100%;
+.executive-expertise {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin-bottom: 13px;
+
+  color: var(--navy);
+
+  font-size: 0.63rem;
+
+  font-weight: 800;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.12em;
+}
+
+.executive-line {
+  flex: 1;
+
   height: 1px;
-
-  margin-bottom: 18px;
 
   background:
     linear-gradient(
@@ -1376,156 +1455,247 @@ footer::before {
 }
 
 
-/* ---------------------------------------------------------
-   FOOTER
-   --------------------------------------------------------- */
+/* =========================================================
+   ABDIKADIR QUALIFICATIONS
+   ========================================================= */
 
-.leader-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.executive-qualifications {
+  display: grid;
 
-  gap: 20px;
+  grid-template-columns: 1fr 1fr;
 
-  color: var(--muted);
-
-  font-size: 0.72rem;
-
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+  gap: 7px;
 }
 
-.leader-footer span:first-child {
+.executive-qualification {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 4px;
+
+  padding: 10px 11px;
+
+  border:
+    1px solid
+    rgba(10, 46, 109, 0.07);
+
+  border-radius: 9px;
+
+  background: #fafbfd;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.executive-qualification:hover {
+  transform: translateY(-2px);
+
+  border-color:
+    rgba(200, 155, 60, 0.25);
+
+  background: #fff;
+}
+
+.executive-qualification strong {
   color: var(--navy);
+
+  font-size: 0.68rem;
+
+  line-height: 1.35;
+
+  font-weight: 800;
+}
+
+.executive-qualification span {
+  color: var(--muted);
+
+  font-size: 0.60rem;
+
+  line-height: 1.35;
+}
+
+
+/* =========================================================
+   OTHER LEADERS — FOCUS LIST
+   ========================================================= */
+
+.executive-focus-list {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 8px;
+}
+
+.executive-focus-list > div {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 11px 12px;
+
+  border:
+    1px solid
+    rgba(10, 46, 109, 0.07);
+
+  border-radius: 9px;
+
+  background: #fafbfd;
+
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.executive-focus-list > div:hover {
+  transform: translateX(2px);
+
+  border-color:
+    rgba(200, 155, 60, 0.25);
+
+  background: #fff;
+}
+
+.focus-icon {
+  display: grid;
+
+  place-items: center;
+
+  width: 22px;
+  height: 22px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background:
+    rgba(200, 155, 60, 0.10);
+
+  color: var(--gold);
+
+  font-size: 0.65rem;
+
+  font-weight: 900;
+}
+
+.executive-focus-list strong {
+  color: var(--navy);
+
+  font-size: 0.68rem;
+
   font-weight: 800;
 }
 
 
-/* ---------------------------------------------------------
-   CONTROLS
-   --------------------------------------------------------- */
+/* =========================================================
+   FOOTER
+   ========================================================= */
 
-.leader-controls {
+.leadership-board-footer {
   display: flex;
-  justify-content: center;
+
   align-items: center;
 
   gap: 18px;
 
-  margin-top: 18px;
-}
+  padding: 22px 35px;
 
-.leader-arrow {
-  width: 46px;
-  height: 46px;
+  border-top:
+    1px solid
+    rgba(10, 46, 109, 0.08);
 
-  display: grid;
-  place-items: center;
+  color: var(--muted);
 
-  border-radius: 50%;
+  font-size: 0.63rem;
 
-  border: 1px solid rgba(10, 46, 109, 0.12);
-
-  background: #fff;
-
-  color: var(--navy);
-
-  font-size: 1rem;
   font-weight: 700;
 
-  cursor: pointer;
+  text-transform: uppercase;
 
-  box-shadow:
-    0 8px 22px rgba(6, 29, 71, 0.08);
+  letter-spacing: 0.12em;
 
-  transition:
-    transform 0.25s ease,
-    background 0.25s ease,
-    color 0.25s ease,
-    border-color 0.25s ease;
+  text-align: center;
 }
 
-.leader-arrow:hover {
-  transform: translateY(-2px);
-
-  background: var(--navy);
-
-  color: #fff;
-
-  border-color: var(--navy);
+.leadership-board-footer span {
+  white-space: nowrap;
 }
 
-.leader-dots {
-  display: flex;
-  align-items: center;
-  gap: 7px;
+.leadership-board-footer b {
+  color: var(--gold);
+
+  margin: 0 4px;
 }
 
-.leader-dot {
-  width: 8px;
-  height: 8px;
+.footer-line {
+  flex: 1;
 
-  padding: 0;
+  height: 1px;
 
-  border: 0;
-  border-radius: 999px;
-
-  background: rgba(10, 46, 109, 0.18);
-
-  cursor: pointer;
-
-  transition:
-    width 0.3s ease,
-    background 0.3s ease;
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(10, 46, 109, 0.12)
+    );
 }
 
-.leader-dot.active {
-  width: 28px;
-
-  background: var(--gold);
+.footer-line:last-child {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(10, 46, 109, 0.12),
+      transparent
+    );
 }
 
 
-/* ---------------------------------------------------------
+/* =========================================================
    TABLET
-   --------------------------------------------------------- */
+   ========================================================= */
 
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
 
-  .leadership-section {
-    padding: 85px 0 70px;
+  .executive-profile {
+    padding:
+      25px 18px 30px;
   }
 
-  .leader-card {
-    grid-template-columns: 280px 1fr;
-
-    gap: 35px;
-
-    padding: 30px;
+  .executive-content h4 {
+    font-size: 1.3rem;
   }
 
-  .leader-info h3 {
-    font-size: 2.5rem;
+  .executive-content > p {
+    min-height: 150px;
+
+    font-size: 0.76rem;
   }
 
-  .leader-values {
-    gap: 8px;
+  .executive-role {
+    font-size: 0.61rem;
   }
 
-  .leader-value {
-    min-width: auto;
+  .executive-qualifications {
+    grid-template-columns: 1fr;
   }
+
 }
 
 
-/* ---------------------------------------------------------
+/* =========================================================
    MOBILE
-   --------------------------------------------------------- */
+   ========================================================= */
 
-@media (max-width: 700px) {
+@media (max-width: 760px) {
 
   .leadership-section {
-    padding: 70px 0 55px;
+    padding: 75px 0 65px;
   }
 
   .leadership-heading {
@@ -1537,99 +1707,165 @@ footer::before {
   }
 
   .leadership-heading p {
-    font-size: 0.92rem;
+    font-size: 0.90rem;
   }
 
-  .leadership-slider {
-    padding-bottom: 20px;
+
+  /* Header */
+
+  .leadership-board-header {
+    padding: 23px 20px;
   }
 
-  .leader-card {
+  .leadership-board-header h3 {
+    font-size: 1.15rem;
+  }
+
+
+  /* Stack profiles */
+
+  .leadership-grid {
     grid-template-columns: 1fr;
-
-    gap: 28px;
-
-    padding: 20px;
-
-    border-radius: 22px;
   }
 
-  .leader-photo-frame {
-    max-width: 320px;
+
+  .executive-profile {
+    padding:
+      30px 22px 38px;
+
+    border-right: 0;
+
+    border-bottom:
+      1px solid
+      rgba(10, 46, 109, 0.08);
+  }
+
+  .executive-profile:last-child {
+    border-bottom: 0;
+  }
+
+
+  /* Photo */
+
+  .executive-photo {
+    max-width: 330px;
+
+    margin:
+      0 auto 25px;
+  }
+
+
+  /* Text */
+
+  .executive-content {
+    text-align: center;
+  }
+
+  .executive-role {
+    min-height: auto;
+  }
+
+  .executive-content h4 {
+    font-size: 1.65rem;
+  }
+
+  .executive-content > p {
+    min-height: auto;
+
+    max-width: 520px;
+
+    margin:
+      0 auto 25px;
+  }
+
+
+  .executive-expertise {
+    justify-content: center;
+  }
+
+
+  .executive-qualifications {
+    max-width: 500px;
 
     margin: 0 auto;
+
+    text-align: left;
   }
 
-  .leader-info {
-    padding: 0 5px 5px;
 
-    text-align: center;
+  .executive-focus-list {
+    max-width: 500px;
+
+    margin: 0 auto;
+
+    text-align: left;
   }
 
-  .leader-role {
-    justify-content: center;
 
-    font-size: 0.68rem;
-  }
+  /* Footer */
 
-  .leader-info h3 {
-    font-size: 2.25rem;
-  }
-
-  .leader-description {
-    font-size: 0.92rem;
-    line-height: 1.7;
-  }
-
-  .leader-values {
-    justify-content: center;
-  }
-
-  .leader-value {
-    padding: 10px 12px;
-  }
-
-  .leader-footer {
+  .leadership-board-footer {
     flex-direction: column;
 
-    gap: 7px;
+    gap: 10px;
 
-    text-align: center;
+    padding: 20px;
   }
 
-  .leader-arrow {
-    width: 42px;
-    height: 42px;
+  .leadership-board-footer span {
+    white-space: normal;
+
+    line-height: 1.5;
   }
+
+  .footer-line {
+    width: 70px;
+
+    flex: none;
+  }
+
 }
 
 
-/* ---------------------------------------------------------
+/* =========================================================
    SMALL PHONES
-   --------------------------------------------------------- */
+   ========================================================= */
 
 @media (max-width: 420px) {
 
-  .leader-card {
-    padding: 15px;
+  .leadership-board {
+    border-radius: 22px;
   }
 
-  .leader-photo-frame {
-    border-radius: 18px;
+  .leadership-board-header {
+    padding: 20px 17px;
   }
 
-  .leader-info h3 {
-    font-size: 2rem;
+  .board-mark {
+    padding: 7px 9px;
   }
 
-  .leader-value {
-    width: 100%;
-    justify-content: center;
+  .board-mark span {
+    display: none;
   }
 
-  .leader-footer {
-    font-size: 0.64rem;
+  .executive-profile {
+    padding:
+      23px 17px 30px;
   }
+
+  .executive-photo {
+    border-radius: 15px;
+  }
+
+  .executive-content h4 {
+    font-size: 1.5rem;
+  }
+
+  .executive-content > p {
+    font-size: 0.78rem;
+  }
+
 }
 
 
